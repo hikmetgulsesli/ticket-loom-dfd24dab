@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TicketLoom - Operations (Empty &amp; Error States)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#943700",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-surface-variant": "#434655",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "surface-tint": "#0053db",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-container": "#d5e3fc",
+                        "outline": "#737686",
+                        "on-primary-container": "#eeefff",
+                        "secondary-fixed": "#d5e3fc",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-container": "#bc4800",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#004ac6",
+                        "outline-variant": "#c3c6d7",
+                        "inverse-surface": "#2d3133",
+                        "error-container": "#ffdad6",
+                        "background": "#f7f9fb",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-container": "#ffede6",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container": "#eceef0",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#515f74",
+                        "on-secondary-container": "#57657a",
+                        "on-primary-fixed": "#00174b",
+                        "primary-container": "#2563eb",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "24px",
+                        "sm": "8px",
+                        "control_height": "32px",
+                        "lg": "16px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "sidebar_width": "240px",
+                        "gutter": "16px",
+                        "md": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "code": ["jetbrainsMono"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "code": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-lg": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-md px-sm fixed left-0 top-0 z-40 bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-outline w-sidebar_width">
+<div class="flex items-center gap-sm px-sm mb-xl">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-size: 18px;">support_agent</span>
+</div>
+<div>
+<h1 class="text-headline-sm font-headline-sm font-black text-primary dark:text-inverse-primary">TicketLoom</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Service Desk</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-xs">
+<!-- Active Tab: Operations -->
+<a class="flex items-center gap-sm px-md py-sm bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg scale-[0.98] transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">dashboard</span>
+<span class="text-label-md font-label-md">Operations</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">queue</span>
+<span class="text-label-md font-label-md">Queues</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">group_work</span>
+<span class="text-label-md font-label-md">Workload</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">analytics</span>
+<span class="text-label-md font-label-md">Insights</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-xs pt-md border-t border-outline-variant dark:border-outline">
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">contact_support</span>
+<span class="text-label-md font-label-md">Support</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">inventory_2</span>
+<span class="text-label-md font-label-md">Archive</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-sidebar_width flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-control_height px-lg w-full z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline sticky top-0">
+<div class="flex items-center">
+<!-- Search placeholder if on_left -->
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 16px;">search</span>
+<input class="h-8 pl-8 pr-3 bg-surface-container-low border border-outline-variant rounded text-body-sm focus:border-primary focus:ring-1 focus:ring-primary w-64 outline-none" placeholder="Search tickets..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors rounded">
+<span class="material-symbols-outlined" style="font-size: 18px;">notifications</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors rounded">
+<span class="material-symbols-outlined" style="font-size: 18px;">help</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors rounded">
+<span class="material-symbols-outlined" style="font-size: 18px;">settings</span>
+</button>
+<div class="w-8 h-8 ml-2 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden flex items-center justify-center">
+<img alt="Agent Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM5nH50fq41wlP6ZOUfTBPIGndlJKb36BrT8fS1BmKAfO47Q70VUY2rMi5BhGWImIGdQjHhktKWZmMq1F6Iut6xGGjznTx5SIXxP0oUfnOwcNvrQWmJyR8WCQixAJxDUqSyapypSVvNvPY-gkeXuHXkoNQ45zJ1_jG3enri02Wg7-yOR2oFQ1BkuYwncgxmpEoc5vKa925R3Kzoj9LopM0YY9QLMVPnTzPFtwhVasX-S6mMGA_vRnuzohB4RbqgGg5_pik4Qcq24A"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="flex-1 p-xl flex flex-col gap-xl">
+<!-- Page Header (Context) -->
+<div class="flex justify-between items-center">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Operations View</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Filtered by: <span class="bg-surface-container px-2 py-0.5 rounded text-label-sm">Status: Open</span> <span class="bg-surface-container px-2 py-0.5 rounded text-label-sm">Assignee: Me</span></p>
+</div>
+<div class="flex gap-sm">
+<button class="h-control_height px-md flex items-center gap-sm bg-surface border border-outline-variant rounded hover:bg-surface-container transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined" style="font-size: 16px;">filter_list</span>
+                        Filters
+                    </button>
+</div>
+</div>
+<!-- Display Area: Split to show both states for demonstration -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl flex-1">
+<!-- State 1: Empty State (No Tickets Found) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-xl flex flex-col items-center justify-center min-h-[400px] text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-lg text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'wght' 200;">inbox</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">No tickets found</h3>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-[280px] mb-xl">Adjust your filters or create a new ticket to get started.</p>
+<div class="flex flex-col sm:flex-row gap-sm items-center">
+<button class="h-control_height px-lg bg-surface border border-outline-variant rounded text-on-surface hover:bg-surface-container transition-colors text-label-md font-label-md">
+                            Clear Filters
+                        </button>
+<button class="h-control_height px-lg bg-primary text-on-primary rounded hover:bg-primary-container transition-colors text-label-md font-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                            Create Ticket
+                        </button>
+</div>
+</div>
+<!-- State 2: Global Load Error (Simulated Panel) -->
+<div class="bg-surface-container-lowest border border-error-container rounded-xl p-xl flex flex-col items-center justify-center min-h-[400px] text-center relative overflow-hidden">
+<!-- Subtle error background tint -->
+<div class="absolute inset-0 bg-error-container opacity-10 pointer-events-none"></div>
+<div class="w-16 h-16 rounded-full bg-error-container flex items-center justify-center mb-lg text-error">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'wght' 300;">cloud_off</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Unable to load ticket data</h3>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-[300px] mb-xl">A network timeout occurred while fetching the latest updates. Please check your connection.</p>
+<div class="flex flex-col sm:flex-row gap-sm items-center z-10">
+<button class="h-control_height px-lg bg-surface border border-outline-variant rounded text-on-surface hover:bg-surface-container transition-colors text-label-md font-label-md">
+                            Contact Support
+                        </button>
+<button class="h-control_height px-lg bg-primary text-on-primary rounded hover:bg-primary-container transition-colors text-label-md font-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">refresh</span>
+                            Retry
+                        </button>
+</div>
+<div class="mt-xl text-label-sm font-label-sm text-outline font-code">
+                        ERR_TIMEOUT_504 | Trace: 8f9a2b1c
+                    </div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agent Workload - Ticket Loom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "tertiary-fixed": "#ffdbcd",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary": "#ffffff",
+                        "outline": "#737686",
+                        "on-surface-variant": "#434655",
+                        "surface-bright": "#f7f9fb",
+                        "primary": "#004ac6",
+                        "secondary-fixed": "#d5e3fc",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-background": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#943700",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#ffede6",
+                        "tertiary-container": "#bc4800",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-fixed": "#00174b",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary-container": "#eeefff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#57657a",
+                        "surface-tint": "#0053db",
+                        "surface": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eceef0",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "primary-container": "#2563eb",
+                        "secondary-container": "#d5e3fc",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2d3133",
+                        "secondary": "#515f74",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "24px",
+                        "lg": "16px",
+                        "sm": "8px",
+                        "gutter": "16px",
+                        "sidebar_width": "240px",
+                        "xs": "4px",
+                        "control_height": "32px",
+                        "md": "12px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "code": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "code": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-lg": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "headline-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); margin: 0; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+        /* Scrollbar styling for density */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: theme('colors.outline-variant'); border-radius: theme('borderRadius.full'); }
+        ::-webkit-scrollbar-thumb:hover { background: theme('colors.outline'); }
+    </style>
+</head>
+<body class="h-screen w-full flex overflow-hidden bg-background">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col w-sidebar_width h-screen sticky top-0 left-0 bg-surface-container-low border-r border-outline-variant py-xl px-sm gap-md shrink-0">
+<div class="px-md mb-xl flex items-center gap-sm">
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">Ticket Loom</span>
+</div>
+<div class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-150 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">confirmation_number</span>
+<span class="font-body-md text-body-md">Ticket Operations</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-150 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">queue</span>
+<span class="font-body-md text-body-md">Queue Management</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-primary bg-secondary-container font-medium transition-colors duration-150 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-body-md text-body-md">Agent Workload</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-150 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+<span class="font-body-md text-body-md">Insights</span>
+</a>
+</div>
+<div class="mt-auto px-md">
+<button class="w-full h-control_height bg-primary text-on-primary font-label-md text-label-md rounded flex items-center justify-center gap-xs hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Create Ticket
+            </button>
+<div class="mt-lg flex items-center gap-sm pt-md border-t border-outline-variant">
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A close up portrait of a professional man in a modern office setting. The lighting is soft and natural, suggesting a daytime work environment. The color palette is neutral with soft blues and grays, fitting a corporate or tech professional vibe. The mood is approachable yet focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHrBy2FMZUvez6t6Fie3vFMOu4-4zGjAuAqp-jdzuEdmG4L4KPrbFOA8sZTMofu0TI73YW63foIk2CWIaHUxCCqXgkUAMcY7B5bhMNQ3vXWoJynF3VMuC2jAJs2VAhJhWfDD3gyqZG66s9KoFmV-iK36USpac7UaxREF2rn48MW6r697IYyeC6ZNXDyKEiO_UNbplNIlfLEjgGqbtodu4g6BtbZaPhuYVOzP_d3zbsy0Cmqstbr2F5S0IY6Z6qrfD72nLHhXf2XA8"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Admin User</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Service Desk</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 bg-background overflow-hidden">
+<!-- TopAppBar (Mobile & Top context) -->
+<header class="h-control_height w-full sticky top-0 z-50 bg-surface flex justify-between items-center px-gutter w-full max-w-full border-b border-outline-variant shrink-0">
+<div class="flex items-center gap-md">
+<span class="md:hidden font-headline-md text-headline-md text-on-surface">Ticket Loom</span>
+<span class="hidden md:inline font-headline-sm text-headline-sm text-on-surface">Agent Workload</span>
+</div>
+<div class="flex items-center gap-sm">
+<!-- Search on left of actions -->
+<div class="relative hidden sm:block w-64">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">search</span>
+<input class="w-full h-control_height pl-8 pr-3 bg-surface-container rounded border-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm text-on-surface placeholder-on-surface-variant" placeholder="Search agents..." type="text"/>
+</div>
+<button class="w-control_height h-control_height flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 rounded">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+</button>
+<button class="w-control_height h-control_height flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 rounded">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+</button>
+<button class="w-control_height h-control_height flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 rounded">
+<span class="material-symbols-outlined text-[18px]">help_outline</span>
+</button>
+<img alt="Agent Profile" class="w-6 h-6 rounded-full border border-outline-variant md:hidden object-cover" data-alt="A close up portrait of a professional man in a modern office setting. The lighting is soft and natural, suggesting a daytime work environment. The color palette is neutral with soft blues and grays, fitting a corporate or tech professional vibe. The mood is approachable yet focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGdc9U5O-_Ll94oOj_2Trj7RklHg9rQbdwVDFTs3lf2JFd4tXoRZWiTTGio_RxCBPKkR8R0XbP0SXVN9QbzP1BwOHPv_7uTwSp-K-8j1MuvnxFNW2k6-nkiqFEv89J5OnScmWIsS69M7191Ift7hPAPKz3FWnfjuJw6KpFNfg0n2N8vjAHAL9Kg4HSf4Xbr6YtlkFpQN5TONepz2W7UXa6J9lgwSPj5IIvfn9sgZ-TgtYRcuEznKKy-UtAId4svibWXTzyoNvqIvI"/>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col lg:flex-row overflow-hidden p-gutter gap-gutter">
+<!-- Left Pane: Agent List (Fluid width) -->
+<section class="flex-1 flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col min-h-0">
+<!-- List Header / Filters -->
+<div class="h-[48px] border-b border-outline-variant px-md flex items-center justify-between shrink-0 bg-surface-bright">
+<div class="flex items-center gap-sm">
+<select class="h-control_height border border-outline-variant rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface focus:border-primary focus:ring-0 py-0 pl-2 pr-8">
+<option>All Teams</option>
+<option>Tier 1 Support</option>
+<option>Tier 2 Engineering</option>
+</select>
+<select class="h-control_height border border-outline-variant rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface focus:border-primary focus:ring-0 py-0 pl-2 pr-8">
+<option>All Queues</option>
+<option>Billing</option>
+<option>Technical</option>
+</select>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-control_height px-md border border-outline-variant rounded bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+                            Filter
+                        </button>
+</div>
+</div>
+<!-- Table Header -->
+<div class="grid grid-cols-[2fr_1fr_1fr_1fr_auto] gap-sm px-md py-sm border-b border-outline-variant bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider shrink-0">
+<div>Agent</div>
+<div class="text-right">Active</div>
+<div class="text-right">Overdue</div>
+<div class="text-right">Capacity</div>
+<div class="w-8"></div>
+</div>
+<!-- Table Body -->
+<div class="flex-1 overflow-y-auto">
+<!-- Agent Row 1 (Overloaded) -->
+<div class="grid grid-cols-[2fr_1fr_1fr_1fr_auto] gap-sm px-md py-sm border-b border-outline-variant items-center hover:bg-surface-container-low cursor-pointer group bg-error-container/10">
+<div class="flex items-center gap-sm overflow-hidden">
+<div class="relative">
+<img alt="Sarah Jenkins" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="Portrait of a young professional woman. Bright, clean lighting against a neutral background. She has a confident, slight smile. High-resolution, corporate headshot style appropriate for a sleek enterprise application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgB-_oph8kVG3hxZV5xyzbYPXw9HZNguUoxs-ki8MDam1zGiRp8jsr5TXSV7mQ7RKkMFw5Cqr2ARghZAZWNI_JjQQQ3oA83zgWZkTonDQ3Dqk8SUcR1dSPd1ysMPfNop2hvpSNiURGxQuhFF591xaq-7UQ5tgrFpYYuxzBZxp-Z7AfJUjbmSud51rCASm7Z9XfglEreJB9qHGXN5URqmcQW-eLbQjMvBcymxA0rnrj-JN3ygj7vXdqvJMSEdT77ipCSsVltIY1dn4"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface truncate font-medium">Sarah Jenkins</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tier 2 Engineering</span>
+</div>
+</div>
+<div class="text-right font-code text-code text-on-surface">24</div>
+<div class="text-right font-code text-code text-error font-medium">8</div>
+<div class="flex items-center justify-end gap-2">
+<div class="w-16 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 95%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-error">95%</span>
+</div>
+<div class="w-8 flex justify-end">
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Agent Row 2 (Selected) -->
+<div class="grid grid-cols-[2fr_1fr_1fr_1fr_auto] gap-sm px-md py-sm border-b border-outline-variant items-center bg-primary-container/10 cursor-pointer group shadow-[inset_2px_0_0_0_theme('colors.primary')]">
+<div class="flex items-center gap-sm overflow-hidden">
+<div class="relative">
+<img alt="Michael Chen" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="Portrait of a professional man with short dark hair and glasses. Neutral grey background, well-lit studio lighting. Corporate, reliable, approachable aesthetic suitable for a tech platform avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD17EuiqufZo8wf2S47MIBMxSnJwQdaAJCeWcdm_Xgppp-rKgElq2RDCHi8dWzS6i4PbO6yLCHRNBYk7bfqmwZ2-0x84F-X24UfJQ2bQzazoSnsheFUYkhsd_xixZj-gfO1FoQ0TYYUV5HjtSTv36KMTg8HnpaPHKubd-DbSa6yN7P0rDA_R6KowPMz00RYQH7n5FFrJlKP5Dk_9ciA54WWr2Fa2SkYruX5g5eKZfACyQZY9Cd-nweUr5_lgi4R-9v-unZAuOlw1Vw"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-primary font-medium truncate">Michael Chen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tier 1 Support</span>
+</div>
+</div>
+<div class="text-right font-code text-code text-on-surface">12</div>
+<div class="text-right font-code text-code text-on-surface-variant">0</div>
+<div class="flex items-center justify-end gap-2">
+<div class="w-16 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 60%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">60%</span>
+</div>
+<div class="w-8 flex justify-end">
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,4233 @@
+{
+  "generatedAt": "2026-05-19T15:03:12.679Z",
+  "screenCount": 7,
+  "screens": {
+    "5ca3ddc70e5b4eeead9d32659b517e95": {
+      "screenId": "5ca3ddc70e5b4eeead9d32659b517e95",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "dark:bg-inverse-surface",
+            "flex",
+            "justify-between",
+            "items-center",
+            "h-control_height",
+            "px-lg",
+            "w-full",
+            "z-50",
+            "fixed"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "bg-surface-container-low",
+            "dark:bg-inverse-surface",
+            "border-r",
+            "border-outline-variant",
+            "dark:border-outline",
+            "flex",
+            "flex-col",
+            "h-full",
+            "py-md",
+            "px-sm"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "ml-0",
+            "md:ml-sidebar_width",
+            "mt-[32px]",
+            "p-lg",
+            "overflow-y-auto"
+          ],
+          "childCount": 56
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "menu",
+          "classes": [
+            "md:hidden",
+            "text-primary",
+            "dark:text-inverse-primary",
+            "hover:bg-surface-container",
+            "dark:hover:bg-surface-container-highest",
+            "p-sm",
+            "rounded-DEFAULT",
+            "transition-colors"
+          ],
+          "icon": "menu",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-on-surface-variant",
+            "dark:text-surface-variant",
+            "hover:bg-surface-container",
+            "dark:hover:bg-surface-container-highest",
+            "transition-colors",
+            "h-control_height",
+            "w-control_height",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-DEFAULT"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help",
+          "classes": [
+            "text-on-surface-variant",
+            "dark:text-surface-variant",
+            "hover:bg-surface-container",
+            "dark:hover:bg-surface-container-highest",
+            "transition-colors",
+            "h-control_height",
+            "w-control_height",
+            "flex",
+            "items-center",
+            "justify-center",
+            "rounded-DEFAULT"
+          ],
+          "icon": "help",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/help",
+          "expectedRoute": "/help",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "text-primary",
+            "dark:text-inverse-primary",
+            "font-bold",
+            "border-b-2",
+            "border-primary",
+            "hover:bg-surface-container",
+            "dark:hover:bg-surface-container-highest",
+            "transition-colors",
+            "h-control_height",
+            "w-control_height",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Reset to Defaults",
+          "classes": [
+            "h-control_height",
+            "px-md",
+            "border",
+            "border-outline",
+            "text-on-surface-variant",
+            "bg-surface",
+            "hover:bg-surface-container",
+            "rounded-DEFAULT",
+            "text-label-md",
+            "font-label-md",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-xs"
+          ],
+          "icon": null,
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "classes": [
+            "h-control_height",
+            "px-md",
+            "bg-primary",
+            "text-on-primary",
+            "hover:opacity-90",
+            "rounded-DEFAULT",
+            "text-label-md",
+            "font-label-md",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-xs"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Compact",
+          "classes": [
+            "flex-1",
+            "bg-primary",
+            "text-on-primary",
+            "text-label-md",
+            "font-label-md",
+            "flex",
+            "items-center",
+            "justify-center",
+            "border-r",
+            "border-outline-variant",
+            "last:border-r-0"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Comfortable",
+          "classes": [
+            "flex-1",
+            "bg-surface",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "text-label-md",
+            "font-label-md",
+            "flex",
+            "items-center",
+            "justify-center",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "New Filter",
+          "classes": [
+            "text-primary",
+            "hover:text-primary-container",
+            "text-label-md",
+            "font-label-md",
+            "flex",
+            "items-center",
+            "gap-xs"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Edit",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-colors",
+            "p-xs"
+          ],
+          "icon": "edit",
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Retry Sync",
+          "classes": [
+            "h-control_height",
+            "px-md",
+            "bg-surface",
+            "text-on-surface",
+            "border",
+            "border-outline",
+            "hover:bg-surface-container",
+            "rounded-DEFAULT",
+            "text-label-md",
+            "font-label-md",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-xs"
+          ],
+          "icon": null,
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "select",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "w-full",
+            "h-control_height",
+            "px-sm",
+            "py-0",
+            "border",
+            "border-outline-variant",
+            "rounded-DEFAULT",
+            "bg-surface",
+            "text-body-md",
+            "font-body-md",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "outline-none"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "radio",
+          "label": "default_filter",
+          "placeholder": "",
+          "name": "default_filter",
+          "classes": [
+            "w-4",
+            "h-4",
+            "text-primary",
+            "bg-surface",
+            "border-outline",
+            "focus:ring-primary",
+            "focus:ring-1"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "toggle",
+          "placeholder": "",
+          "name": "toggle",
+          "classes": [
+            "toggle-checkbox",
+            "absolute",
+            "block",
+            "w-4",
+            "h-4",
+            "rounded-full",
+            "bg-white",
+            "border-4",
+            "appearance-none",
+            "cursor-pointer",
+            "z-10",
+            "opacity-0"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "dashboard",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Queues",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "queue",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Workload",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "group_work",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Support",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "contact_support",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Archive",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "inventory_2",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Views & Display",
+          "href": "#views",
+          "classes": [
+            "block",
+            "px-sm",
+            "py-xs",
+            "text-label-md",
+            "font-label-md",
+            "text-primary",
+            "bg-primary-fixed",
+            "rounded-DEFAULT"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#views"
+        },
+        {
+          "kind": "link",
+          "label": "Saved Filters",
+          "href": "#filters",
+          "classes": [
+            "block",
+            "px-sm",
+            "py-xs",
+            "text-label-md",
+            "font-label-md",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "rounded-DEFAULT",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#filters"
+        },
+        {
+          "kind": "link",
+          "label": "Notifications",
+          "href": "#notifications",
+          "classes": [
+            "block",
+            "px-sm",
+            "py-xs",
+            "text-label-md",
+            "font-label-md",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "rounded-DEFAULT",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#notifications"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "menu",
+        "notifications",
+        "help",
+        "settings",
+        "dashboard",
+        "queue",
+        "group_work",
+        "analytics",
+        "contact_support",
+        "visibility",
+        "filter_list",
+        "add",
+        "edit",
+        "notifications_active",
+        "warning",
+        "check_circle",
+        "sync"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuB2o4EpQWKeBNaf5XmwhibkBN9gXgXnwkqTmyfUawTdqptos9-j84faEI8h5422I8Lj1-vgjTulGT_K3YB-O3BMaaXbxEQAf5A2WfueDCzvQENhx-TKWK8AxkJBaEbK3FLnyWvaBU4bKk47C0x1Pe",
+          "alt": "Agent Avatar"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "tertiary": "#943700",
+        "secondary-fixed-dim": "#b9c7df",
+        "on-primary": "#ffffff",
+        "on-surface": "#191c1e",
+        "on-surface-variant": "#434655",
+        "surface-dim": "#d8dadc",
+        "surface-container-low": "#f2f4f6",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "surface": "#f7f9fb",
+        "on-background": "#191c1e",
+        "surface-tint": "#0053db",
+        "surface-bright": "#f7f9fb",
+        "secondary-container": "#d5e3fc",
+        "outline": "#737686",
+        "on-primary-container": "#eeefff",
+        "secondary-fixed": "#d5e3fc",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary-container": "#bc4800",
+        "on-tertiary": "#ffffff",
+        "primary": "#004ac6",
+        "outline-variant": "#c3c6d7",
+        "inverse-surface": "#2d3133",
+        "error-container": "#ffdad6",
+        "background": "#f7f9fb",
+        "primary-fixed": "#dbe1ff",
+        "surface-variant": "#e0e3e5",
+        "on-tertiary-container": "#ffede6",
+        "tertiary-fixed": "#ffdbcd",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container": "#eceef0",
+        "inverse-on-surface": "#eff1f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#515f74",
+        "on-secondary-container": "#57657a",
+        "on-primary-fixed": "#00174b",
+        "primary-container": "#2563eb",
+        "tertiary-fixed-dim": "#ffb596",
+        "primary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "surface-container-high": "#e6e8ea",
+        "surface-container-highest": "#e0e3e5",
+        "on-secondary-fixed-variant": "#3a485b",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed": "#360f00",
+        "on-error": "#ffffff"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "dashboard",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Queues",
+          "icon": "queue",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Workload",
+          "icon": "group_work",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Support",
+          "icon": "contact_support",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Archive",
+          "icon": "inventory_2",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Views & Display",
+          "icon": null,
+          "route": "#views",
+          "expectedBehavior": "navigate:#views"
+        },
+        {
+          "kind": "link",
+          "label": "Saved Filters",
+          "icon": null,
+          "route": "#filters",
+          "expectedBehavior": "navigate:#filters"
+        },
+        {
+          "kind": "link",
+          "label": "Notifications",
+          "icon": null,
+          "route": "#notifications",
+          "expectedBehavior": "navigate:#notifications"
+        },
+        {
+          "kind": "button",
+          "label": "menu",
+          "icon": "menu",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help",
+          "icon": "help",
+          "action": "navigate",
+          "route": "/help",
+          "expectedBehavior": "navigate:/help"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Reset to Defaults",
+          "icon": null,
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Compact",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Comfortable",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "New Filter",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Edit",
+          "icon": "edit",
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Retry Sync",
+          "icon": null,
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "input",
+          "label": "select",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "default_filter",
+          "type": "radio",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "toggle",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "dashboard",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Queues",
+          "icon": "queue",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Workload",
+          "icon": "group_work",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Support",
+          "icon": "contact_support",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Archive",
+          "icon": "inventory_2",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Settings and Preferences - Product"
+    },
+    "89d51e20e881422ba5150d6fbafdf977": {
+      "screenId": "89d51e20e881422ba5150d6fbafdf977",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "h-full",
+            "py-xl",
+            "px-sm",
+            "gap-md",
+            "w-sidebar_width",
+            "h-screen",
+            "sticky"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "flex",
+            "flex-col",
+            "h-full",
+            "overflow-hidden",
+            "relative"
+          ],
+          "childCount": 53
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "classes": [
+            "h-control_height",
+            "bg-primary",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "rounded",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-sm",
+            "mb-lg",
+            "hover:bg-primary-container",
+            "transition-colors",
+            "shadow-[0_1px_2px_rgba(0,0,0,0.05)]"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Filter",
+          "classes": [
+            "h-control_height",
+            "px-sm",
+            "flex",
+            "items-center",
+            "gap-xs",
+            "text-on-surface-variant",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "view_column",
+          "classes": [
+            "h-control_height",
+            "w-control_height",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface-variant",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "hover:bg-surface-container-low",
+            "transition-colors"
+          ],
+          "icon": "view_column",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "chevron_left",
+          "classes": [
+            "material-symbols-outlined",
+            "text-[16px]",
+            "text-on-surface-variant",
+            "hover:text-on-surface"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "chevron_right",
+          "classes": [
+            "material-symbols-outlined",
+            "text-[16px]",
+            "text-on-surface-variant",
+            "hover:text-on-surface"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "open_in_new",
+          "classes": [
+            "material-symbols-outlined",
+            "text-[18px]",
+            "text-on-surface-variant",
+            "hover:text-on-surface"
+          ],
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "close",
+          "classes": [
+            "material-symbols-outlined",
+            "text-[18px]",
+            "text-on-surface-variant",
+            "hover:text-on-surface"
+          ],
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Reply",
+          "classes": [
+            "flex-1",
+            "h-control_height",
+            "bg-primary",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "rounded",
+            "hover:bg-primary-container",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Note",
+          "classes": [
+            "h-control_height",
+            "px-sm",
+            "text-on-surface-variant",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom Service Desk",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Alex Mercer L2 Support",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Tickets",
+          "classes": [],
+          "icon": "confirmation_number",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#",
+          "expectedRoute": "#"
+        },
+        {
+          "kind": "button",
+          "label": "Queues",
+          "classes": [],
+          "icon": "queue",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#",
+          "expectedRoute": "#"
+        },
+        {
+          "kind": "button",
+          "label": "Agents",
+          "classes": [],
+          "icon": "group",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#",
+          "expectedRoute": "#"
+        },
+        {
+          "kind": "button",
+          "label": "Insights",
+          "classes": [],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#",
+          "expectedRoute": "#"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search tickets, IDs, or users...",
+          "placeholder": "Search tickets, IDs, or users...",
+          "name": "",
+          "classes": [
+            "w-full",
+            "h-control_height",
+            "pl-8",
+            "pr-3",
+            "text-body-md",
+            "font-body-md",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "outline-none",
+            "transition-all",
+            "placeholder:text-outline"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "href": "#",
+          "classes": [
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "confirmation_number",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "href": "#",
+          "classes": [
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "queue",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "href": "#",
+          "classes": [
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "group",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-label-md",
+            "text-label-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "add",
+        "confirmation_number",
+        "queue",
+        "group",
+        "analytics",
+        "menu",
+        "search",
+        "filter_list",
+        "view_column",
+        "warning",
+        "keyboard_double_arrow_up",
+        "keyboard_arrow_up",
+        "drag_handle",
+        "keyboard_arrow_down"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCfxxeTA0sTSgEEbGU90yON_HS9jVw-b4oR02n5ndUKd1W4o7FiJSu-h72puAcU9BsmvJDpjU_h4w_uAxXXfJRpgtVvTDlETbu2yPKd-VBB7tnoJVfoSBUUKgErWzrtvI5hK1zHsbJJzFNeBkvurx",
+          "alt": "User profile"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAFKSGsSbJ6ZUKgb_9NM1fpq4IXJ0e9jUWWrCbmY6LyZLULh6ryUDb53CQip9MD3HsgtvRmcJFK94_qSlqOafMlSAEANn0ajVwgXX3P4SDdVqU55gNUFkClVWfyVTDVydlNgwtGEF2HS8QstyVydT",
+          "alt": "Agent Profile"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "tertiary": "#943700",
+        "secondary-fixed-dim": "#b9c7df",
+        "on-primary": "#ffffff",
+        "on-surface": "#191c1e",
+        "on-surface-variant": "#434655",
+        "surface-dim": "#d8dadc",
+        "surface-container-low": "#f2f4f6",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "surface": "#f7f9fb",
+        "on-background": "#191c1e",
+        "surface-tint": "#0053db",
+        "surface-bright": "#f7f9fb",
+        "secondary-container": "#d5e3fc",
+        "outline": "#737686",
+        "on-primary-container": "#eeefff",
+        "secondary-fixed": "#d5e3fc",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary-container": "#bc4800",
+        "on-tertiary": "#ffffff",
+        "primary": "#004ac6",
+        "outline-variant": "#c3c6d7",
+        "inverse-surface": "#2d3133",
+        "error-container": "#ffdad6",
+        "background": "#f7f9fb",
+        "primary-fixed": "#dbe1ff",
+        "surface-variant": "#e0e3e5",
+        "on-tertiary-container": "#ffede6",
+        "tertiary-fixed": "#ffdbcd",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container": "#eceef0",
+        "inverse-on-surface": "#eff1f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#515f74",
+        "on-secondary-container": "#57657a",
+        "on-primary-fixed": "#00174b",
+        "primary-container": "#2563eb",
+        "tertiary-fixed-dim": "#ffb596",
+        "primary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "surface-container-high": "#e6e8ea",
+        "surface-container-highest": "#e0e3e5",
+        "on-secondary-fixed-variant": "#3a485b",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed": "#360f00",
+        "on-error": "#ffffff"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "gridCols": 2,
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "icon": "confirmation_number",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "icon": "queue",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "icon": "group",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Filter",
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "view_column",
+          "icon": "view_column",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "chevron_left",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "chevron_right",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "open_in_new",
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "close",
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Reply",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Note",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom Service Desk",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Alex Mercer L2 Support",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Tickets",
+          "icon": "confirmation_number",
+          "action": "navigate",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Queues",
+          "icon": "queue",
+          "action": "navigate",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Agents",
+          "icon": "group",
+          "action": "navigate",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Insights",
+          "icon": "analytics",
+          "action": "navigate",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "input",
+          "label": "Search tickets, IDs, or users...",
+          "type": "text",
+          "placeholder": "Search tickets, IDs, or users...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "Ticket Loom Service Desk",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "icon": "confirmation_number",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "icon": "queue",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "icon": "group",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Alex Mercer L2 Support",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "Tickets",
+          "icon": "confirmation_number",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Queues",
+          "icon": "queue",
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "Agents",
+          "icon": "group",
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "Insights",
+          "icon": "analytics",
+          "active": false
+        }
+      ],
+      "title": "Ticket Operations - Product"
+    },
+    "90bee95be4264cc98e1616f14fc32268": {
+      "screenId": "90bee95be4264cc98e1616f14fc32268",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "bg-surface-container-low",
+            "border-r",
+            "border-outline-variant",
+            "w-sidebar_width",
+            "h-screen",
+            "sticky",
+            "top-0"
+          ],
+          "childCount": 7
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "flex",
+            "flex-col",
+            "min-w-0"
+          ],
+          "childCount": 81
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "classes": [
+            "w-full",
+            "h-control_height",
+            "bg-primary",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "rounded-DEFAULT",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-xs",
+            "hover:bg-surface-tint",
+            "transition-colors",
+            "active:scale-95"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "menu",
+          "classes": [
+            "p-xs",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "rounded-DEFAULT",
+            "transition-all",
+            "duration-200"
+          ],
+          "icon": "menu",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Export Summary",
+          "classes": [
+            "p-xs",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "rounded-DEFAULT",
+            "transition-all",
+            "duration-200"
+          ],
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "p-xs",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "rounded-DEFAULT",
+            "transition-all",
+            "duration-200"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "p-xs",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "rounded-DEFAULT",
+            "transition-all",
+            "duration-200"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "p-xs",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "rounded-DEFAULT",
+            "transition-all",
+            "duration-200",
+            "mr-sm"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "add_circle",
+          "classes": [
+            "md:hidden",
+            "ml-xs",
+            "p-xs",
+            "text-primary",
+            "hover:bg-surface-container-low",
+            "rounded-DEFAULT",
+            "transition-all",
+            "duration-200"
+          ],
+          "icon": "add_circle",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "View Tickets",
+          "classes": [
+            "h-control_height",
+            "px-sm",
+            "bg-error",
+            "text-on-error",
+            "font-label-sm",
+            "text-label-sm",
+            "rounded-DEFAULT",
+            "hover:bg-error/90",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "View All",
+          "classes": [
+            "text-primary",
+            "font-label-sm",
+            "text-label-sm",
+            "hover:underline"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "support_agent",
+          "classes": [],
+          "icon": "support_agent",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Service Desk",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "select",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "h-6",
+            "text-[11px]",
+            "font-label-sm",
+            "bg-surface-container-low",
+            "border-outline-variant",
+            "rounded",
+            "px-xs",
+            "py-0",
+            "focus:ring-primary",
+            "focus:border-primary"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md",
+            "group-hover:text-on-surface"
+          ],
+          "icon": "confirmation_number",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md",
+            "group-hover:text-on-surface"
+          ],
+          "icon": "queue",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md",
+            "group-hover:text-on-surface"
+          ],
+          "icon": "group",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "#TK-8492",
+          "href": "#",
+          "classes": [
+            "text-primary",
+            "hover:underline",
+            "font-code"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "#TK-8501",
+          "href": "#",
+          "classes": [
+            "text-primary",
+            "hover:underline",
+            "font-code"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "#TK-8330",
+          "href": "#",
+          "classes": [
+            "text-primary",
+            "hover:underline",
+            "font-code"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "support_agent",
+        "confirmation_number",
+        "queue",
+        "group",
+        "analytics",
+        "add",
+        "menu",
+        "download",
+        "notifications",
+        "settings",
+        "help_outline",
+        "add_circle",
+        "warning",
+        "speed",
+        "info",
+        "trending_down",
+        "schedule",
+        "forum",
+        "trending_flat",
+        "done_all",
+        "priority_high",
+        "assignment_turned_in",
+        "person_add",
+        "chat"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD9HcCVJ4jzk2rXXWvDwC0EGElHT8SN1TijyQgywZ6EH_NUGUQGqXaaC327-PONmW09iu6Nm930Xy9z2N_UvjYyeDlwPIIrFQ3kvI7t3IkEQ8vxrPUuTmLbUnYVZ8MW8obDbwnqCUtY4dmfVCqsdp",
+          "alt": "Agent Profile"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "tertiary": "#943700",
+        "secondary-fixed-dim": "#b9c7df",
+        "on-primary": "#ffffff",
+        "on-surface": "#191c1e",
+        "on-surface-variant": "#434655",
+        "surface-dim": "#d8dadc",
+        "surface-container-low": "#f2f4f6",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "surface": "#f7f9fb",
+        "on-background": "#191c1e",
+        "surface-tint": "#0053db",
+        "surface-bright": "#f7f9fb",
+        "secondary-container": "#d5e3fc",
+        "outline": "#737686",
+        "on-primary-container": "#eeefff",
+        "secondary-fixed": "#d5e3fc",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary-container": "#bc4800",
+        "on-tertiary": "#ffffff",
+        "primary": "#004ac6",
+        "outline-variant": "#c3c6d7",
+        "inverse-surface": "#2d3133",
+        "error-container": "#ffdad6",
+        "background": "#f7f9fb",
+        "primary-fixed": "#dbe1ff",
+        "surface-variant": "#e0e3e5",
+        "on-tertiary-container": "#ffede6",
+        "tertiary-fixed": "#ffdbcd",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container": "#eceef0",
+        "inverse-on-surface": "#eff1f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#515f74",
+        "on-secondary-container": "#57657a",
+        "on-primary-fixed": "#00174b",
+        "primary-container": "#2563eb",
+        "tertiary-fixed-dim": "#ffb596",
+        "primary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "surface-container-high": "#e6e8ea",
+        "surface-container-highest": "#e0e3e5",
+        "on-secondary-fixed-variant": "#3a485b",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed": "#360f00",
+        "on-error": "#ffffff"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "icon": "confirmation_number",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "icon": "queue",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "icon": "group",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "#TK-8492",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "#TK-8501",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "#TK-8330",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "menu",
+          "icon": "menu",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Export Summary",
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "add_circle",
+          "icon": "add_circle",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "View Tickets",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "View All",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "support_agent",
+          "icon": "support_agent",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Service Desk",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "select",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "support_agent",
+          "icon": "support_agent",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Service Desk",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "icon": "confirmation_number",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "icon": "queue",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "icon": "group",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "active": true
+        }
+      ],
+      "title": "Insights - Product"
+    },
+    "ce82acd69fc243b6a759c2280dcdd35f": {
+      "screenId": "ce82acd69fc243b6a759c2280dcdd35f",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "w-sidebar_width",
+            "h-screen",
+            "sticky",
+            "top-0",
+            "left-0",
+            "bg-surface-container-low",
+            "border-r"
+          ],
+          "childCount": 5
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "h-control_height",
+            "w-full",
+            "sticky",
+            "top-0",
+            "z-50",
+            "bg-surface",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-gutter"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "flex",
+            "flex-col",
+            "lg:flex-row",
+            "overflow-hidden",
+            "p-gutter",
+            "gap-gutter"
+          ],
+          "childCount": 33
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "classes": [
+            "w-full",
+            "h-control_height",
+            "bg-primary",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "rounded",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-xs",
+            "hover:bg-surface-tint",
+            "transition-colors"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "w-control_height",
+            "h-control_height",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "transition-all",
+            "duration-200",
+            "rounded"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "w-control_height",
+            "h-control_height",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "transition-all",
+            "duration-200",
+            "rounded"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "w-control_height",
+            "h-control_height",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "transition-all",
+            "duration-200",
+            "rounded"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Filter",
+          "classes": [
+            "h-control_height",
+            "px-md",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "bg-surface-container-lowest",
+            "text-on-surface-variant",
+            "font-label-md",
+            "text-label-md",
+            "hover:bg-surface-container-low",
+            "flex",
+            "items-center",
+            "gap-xs"
+          ],
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "more_vert",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-on-surface",
+            "opacity-0",
+            "group-hover:opacity-100",
+            "transition-opacity"
+          ],
+          "icon": "more_vert",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Admin User Service Desk",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search agents...",
+          "placeholder": "Search agents...",
+          "name": "",
+          "classes": [
+            "w-full",
+            "h-control_height",
+            "pl-8",
+            "pr-3",
+            "bg-surface-container",
+            "rounded",
+            "border-none",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "placeholder-on-surface-variant"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "select",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "h-control_height",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "bg-surface-container-lowest",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-0",
+            "py-0",
+            "pl-2",
+            "pr-8"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "confirmation_number",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "queue",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "group",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "confirmation_number",
+        "queue",
+        "group",
+        "analytics",
+        "add",
+        "search",
+        "notifications",
+        "settings",
+        "help_outline",
+        "filter_list",
+        "more_vert"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHrBy2FMZUvez6t6Fie3vFMOu4-4zGjAuAqp-jdzuEdmG4L4KPrbFOA8sZTMofu0TI73YW63foIk2CWIaHUxCCqXgkUAMcY7B5bhMNQ3vXWoJynF3VMuC2jAJs2VAhJhWfDD3gyqZG66s9KoFmV-",
+          "alt": "User profile"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCGdc9U5O-_Ll94oOj_2Trj7RklHg9rQbdwVDFTs3lf2JFd4tXoRZWiTTGio_RxCBPKkR8R0XbP0SXVN9QbzP1BwOHPv_7uTwSp-K-8j1MuvnxFNW2k6-nkiqFEv89J5OnScmWIsS69M7191Ift7h",
+          "alt": "Agent Profile"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAgB-_oph8kVG3hxZV5xyzbYPXw9HZNguUoxs-ki8MDam1zGiRp8jsr5TXSV7mQ7RKkMFw5Cqr2ARghZAZWNI_JjQQQ3oA83zgWZkTonDQ3Dqk8SUcR1dSPd1ysMPfNop2hvpSNiURGxQuhFF591x",
+          "alt": "Sarah Jenkins"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD17EuiqufZo8wf2S47MIBMxSnJwQdaAJCeWcdm_Xgppp-rKgElq2RDCHi8dWzS6i4PbO6yLCHRNBYk7bfqmwZ2-0x84F-X24UfJQ2bQzazoSnsheFUYkhsd_xixZj-gfO1FoQ0TYYUV5HjtSTv36",
+          "alt": "Michael Chen"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "tertiary": "#943700",
+        "secondary-fixed-dim": "#b9c7df",
+        "on-primary": "#ffffff",
+        "on-surface": "#191c1e",
+        "on-surface-variant": "#434655",
+        "surface-dim": "#d8dadc",
+        "surface-container-low": "#f2f4f6",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "surface": "#f7f9fb",
+        "on-background": "#191c1e",
+        "surface-tint": "#0053db",
+        "surface-bright": "#f7f9fb",
+        "secondary-container": "#d5e3fc",
+        "outline": "#737686",
+        "on-primary-container": "#eeefff",
+        "secondary-fixed": "#d5e3fc",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary-container": "#bc4800",
+        "on-tertiary": "#ffffff",
+        "primary": "#004ac6",
+        "outline-variant": "#c3c6d7",
+        "inverse-surface": "#2d3133",
+        "error-container": "#ffdad6",
+        "background": "#f7f9fb",
+        "primary-fixed": "#dbe1ff",
+        "surface-variant": "#e0e3e5",
+        "on-tertiary-container": "#ffede6",
+        "tertiary-fixed": "#ffdbcd",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container": "#eceef0",
+        "inverse-on-surface": "#eff1f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#515f74",
+        "on-secondary-container": "#57657a",
+        "on-primary-fixed": "#00174b",
+        "primary-container": "#2563eb",
+        "tertiary-fixed-dim": "#ffb596",
+        "primary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "surface-container-high": "#e6e8ea",
+        "surface-container-highest": "#e0e3e5",
+        "on-secondary-fixed-variant": "#3a485b",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed": "#360f00",
+        "on-error": "#ffffff"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "2"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "icon": "confirmation_number",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "icon": "queue",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "icon": "group",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Filter",
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "more_vert",
+          "icon": "more_vert",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Admin User Service Desk",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search agents...",
+          "type": "text",
+          "placeholder": "Search agents...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "select",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "Ticket Loom",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "icon": "confirmation_number",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "icon": "queue",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "icon": "group",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Admin User Service Desk",
+          "icon": null,
+          "active": false
+        }
+      ],
+      "title": "Agent Workload - Product"
+    },
+    "d53c29fbae8e4bc984264462f48963de": {
+      "screenId": "d53c29fbae8e4bc984264462f48963de",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "h-control_height",
+            "w-full",
+            "sticky",
+            "top-0",
+            "z-50",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-gutter"
+          ],
+          "childCount": 1
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "h-full",
+            "overflow-y-auto",
+            "flex",
+            "flex-col",
+            "items-center",
+            "p-sm",
+            "md:p-xl",
+            "bg-background"
+          ],
+          "childCount": 20
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "close",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "duration-200",
+            "rounded",
+            "p-1"
+          ],
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "arrow_back",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "duration-200",
+            "rounded",
+            "p-1",
+            "hidden",
+            "md:flex",
+            "h-control_height",
+            "items-center",
+            "justify-center",
+            "w-control_height",
+            "border",
+            "border-transparent",
+            "hover:border-outline-variant"
+          ],
+          "icon": "arrow_back",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel",
+          "classes": [
+            "h-control_height",
+            "px-md",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "bg-surface",
+            "text-on-surface",
+            "font-label-md",
+            "text-label-md",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "duration-200"
+          ],
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "classes": [
+            "h-control_height",
+            "px-md",
+            "border",
+            "border-transparent",
+            "rounded",
+            "bg-primary",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "hover:bg-primary-container",
+            "transition-colors",
+            "duration-200",
+            "shadow-sm"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Bold",
+          "classes": [
+            "p-1",
+            "rounded",
+            "hover:bg-surface-container-highest",
+            "text-on-surface-variant",
+            "transition-colors"
+          ],
+          "icon": "format_bold",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Italic",
+          "classes": [
+            "p-1",
+            "rounded",
+            "hover:bg-surface-container-highest",
+            "text-on-surface-variant",
+            "transition-colors"
+          ],
+          "icon": "format_italic",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Underline",
+          "classes": [
+            "p-1",
+            "rounded",
+            "hover:bg-surface-container-highest",
+            "text-on-surface-variant",
+            "transition-colors"
+          ],
+          "icon": "format_underlined",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "List",
+          "classes": [
+            "p-1",
+            "rounded",
+            "hover:bg-surface-container-highest",
+            "text-on-surface-variant",
+            "transition-colors"
+          ],
+          "icon": "format_list_bulleted",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Link",
+          "classes": [
+            "p-1",
+            "rounded",
+            "hover:bg-surface-container-highest",
+            "text-on-surface-variant",
+            "transition-colors"
+          ],
+          "icon": "link",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "{\" \"}",
+          "classes": [
+            "p-1",
+            "rounded",
+            "hover:bg-surface-container-highest",
+            "text-on-surface-variant",
+            "transition-colors",
+            "font-code",
+            "text-code",
+            "px-2"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "+ Add",
+          "classes": [
+            "px-2",
+            "py-1",
+            "border",
+            "border-dashed",
+            "border-outline-variant",
+            "text-on-surface-variant",
+            "rounded",
+            "font-label-sm",
+            "text-label-sm",
+            "hover:bg-surface-container-low",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "subject",
+          "placeholder": "",
+          "name": "subject",
+          "classes": [
+            "h-control_height",
+            "w-full",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-sm",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-colors"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "textarea",
+          "label": "description",
+          "placeholder": "",
+          "name": "description",
+          "classes": [
+            "w-full",
+            "flex-1",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded-b",
+            "p-sm",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "transition-colors",
+            "resize-y",
+            "min-h-[200px]"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "status",
+          "placeholder": "",
+          "name": "status",
+          "classes": [
+            "h-control_height",
+            "w-full",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-sm",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "appearance-none",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "priority",
+          "placeholder": "",
+          "name": "priority",
+          "classes": [
+            "h-control_height",
+            "w-full",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-sm",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "appearance-none",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "queue",
+          "placeholder": "",
+          "name": "queue",
+          "classes": [
+            "h-control_height",
+            "w-full",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-sm",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "appearance-none",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "assignee",
+          "placeholder": "",
+          "name": "assignee",
+          "classes": [
+            "h-control_height",
+            "w-full",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "pl-sm",
+            "pr-lg",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "focus:outline-none",
+            "appearance-none",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "close",
+        "arrow_back",
+        "format_bold",
+        "format_italic",
+        "format_underlined",
+        "format_list_bulleted",
+        "link",
+        "person"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "tertiary": "#943700",
+        "secondary-fixed-dim": "#b9c7df",
+        "on-primary": "#ffffff",
+        "on-surface": "#191c1e",
+        "on-surface-variant": "#434655",
+        "surface-dim": "#d8dadc",
+        "surface-container-low": "#f2f4f6",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "surface": "#f7f9fb",
+        "on-background": "#191c1e",
+        "surface-tint": "#0053db",
+        "surface-bright": "#f7f9fb",
+        "secondary-container": "#d5e3fc",
+        "outline": "#737686",
+        "on-primary-container": "#eeefff",
+        "secondary-fixed": "#d5e3fc",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary-container": "#bc4800",
+        "on-tertiary": "#ffffff",
+        "primary": "#004ac6",
+        "outline-variant": "#c3c6d7",
+        "inverse-surface": "#2d3133",
+        "error-container": "#ffdad6",
+        "background": "#f7f9fb",
+        "primary-fixed": "#dbe1ff",
+        "surface-variant": "#e0e3e5",
+        "on-tertiary-container": "#ffede6",
+        "tertiary-fixed": "#ffdbcd",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container": "#eceef0",
+        "inverse-on-surface": "#eff1f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#515f74",
+        "on-secondary-container": "#57657a",
+        "on-primary-fixed": "#00174b",
+        "primary-container": "#2563eb",
+        "tertiary-fixed-dim": "#ffb596",
+        "primary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "surface-container-high": "#e6e8ea",
+        "surface-container-highest": "#e0e3e5",
+        "on-secondary-fixed-variant": "#3a485b",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed": "#360f00",
+        "on-error": "#ffffff"
+      },
+      "fonts": [
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "1"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "close",
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "arrow_back",
+          "icon": "arrow_back",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel",
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Bold",
+          "icon": "format_bold",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Italic",
+          "icon": "format_italic",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Underline",
+          "icon": "format_underlined",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "List",
+          "icon": "format_list_bulleted",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Link",
+          "icon": "link",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "{\" \"}",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "+ Add",
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "input",
+          "label": "subject",
+          "type": "text",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "description",
+          "type": "textarea",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "status",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "priority",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "queue",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "assignee",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Ticket Editor - Product"
+    },
+    "e6360c5f77b74538b3932e74843e37fc": {
+      "screenId": "e6360c5f77b74538b3932e74843e37fc",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "md:hidden",
+            "h-control_height",
+            "w-full",
+            "sticky",
+            "top-0",
+            "z-50",
+            "bg-surface",
+            "border-b",
+            "border-outline-variant",
+            "flex"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "nav",
+          "layout": "block",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "w-sidebar_width",
+            "h-screen",
+            "sticky",
+            "top-0",
+            "left-0",
+            "bg-surface-container-low",
+            "border-r",
+            "border-outline-variant"
+          ],
+          "childCount": 5
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "flex",
+            "flex-col",
+            "h-full",
+            "overflow-hidden",
+            "bg-background"
+          ],
+          "childCount": 46
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "classes": [
+            "w-full",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-sm",
+            "h-control_height",
+            "bg-primary",
+            "text-on-primary",
+            "font-label-md",
+            "text-label-md",
+            "rounded-DEFAULT",
+            "hover:bg-surface-tint",
+            "transition-colors",
+            "duration-200",
+            "shadow-sm"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Notifications",
+          "classes": [
+            "hover:bg-surface-container-highest",
+            "p-xs",
+            "rounded-DEFAULT",
+            "transition-colors"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Settings",
+          "classes": [
+            "hover:bg-surface-container-highest",
+            "p-xs",
+            "rounded-DEFAULT",
+            "transition-colors"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Help",
+          "classes": [
+            "hover:bg-surface-container-highest",
+            "p-xs",
+            "rounded-DEFAULT",
+            "transition-colors"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "view_kanban",
+          "classes": [
+            "px-sm",
+            "flex",
+            "items-center",
+            "justify-center",
+            "hover:bg-surface-container-highest",
+            "transition-colors",
+            "bg-surface-container-highest"
+          ],
+          "icon": "view_kanban",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "list",
+          "classes": [
+            "px-sm",
+            "border-l",
+            "border-outline-variant",
+            "flex",
+            "items-center",
+            "justify-center",
+            "hover:bg-surface-container-highest",
+            "transition-colors"
+          ],
+          "icon": "list",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "more_horiz",
+          "classes": [
+            "text-outline",
+            "hover:text-on-surface"
+          ],
+          "icon": "more_horiz",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom Service Desk",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search ID, Subject...",
+          "placeholder": "Search ID, Subject...",
+          "name": "",
+          "classes": [
+            "w-full",
+            "h-8",
+            "pl-8",
+            "pr-sm",
+            "py-xs",
+            "bg-surface-container-low",
+            "border",
+            "border-outline-variant",
+            "rounded-DEFAULT",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "focus:outline-none",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "transition-all"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "select",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "h-control_height",
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "rounded-DEFAULT",
+            "font-label-sm",
+            "text-label-sm",
+            "px-sm",
+            "text-on-surface",
+            "focus:ring-primary",
+            "focus:border-primary"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md",
+            "font-medium"
+          ],
+          "icon": "confirmation_number",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md",
+            "font-semibold"
+          ],
+          "icon": "queue",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md",
+            "font-medium"
+          ],
+          "icon": "group",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md",
+            "font-medium"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "menu",
+        "search",
+        "confirmation_number",
+        "queue",
+        "group",
+        "analytics",
+        "add",
+        "notifications",
+        "settings",
+        "help_outline",
+        "view_kanban",
+        "list",
+        "more_horiz",
+        "priority_high",
+        "timer",
+        "person_add",
+        "arrow_downward",
+        "horizontal_rule",
+        "warning",
+        "timer_off",
+        "check_circle"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBvZ0VinR3evffAaAzNyep2PlQM8l9iWbH-WLUIZzOWIfMxLZbpBFRu_0wF1fl59FH9rGGAynVBtOD8f7dLyW31hYIKgTwaiJ21conrYAlcj0k5C_GXN1BCjpA_uPiS9FyqJWJqiqKpcmBzXu2ogT",
+          "alt": "Agent Profile"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAOPptFAe6X5ahKqJ3etXJNUg8-fR6dGRhm0P4BzFrE7EOMOKsniBRVYMyPAzLJhAu9WfqhDz4VSguyVzr3wHSDLgUsfH8ooYz79SGvax3fZFwTMLhKZJ6MHfK6kkBtpktsEoqnJDQonxxO-RkRIs",
+          "alt": "User profile"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuA3YAEi595royvAJmHxhq7WNbrmib4f9HiT11inksXzQqU3KYxdIMBCDAQMQANje9-HZKfELW1Ymvb2XoHFIbw7O3GTufkLcX5UIXVNJ_KB3PNYi34rpujkLLTcGhwYAToejlIcMc7cQX_dIqcBdR",
+          "alt": "Jane Doe"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCvbDqd87xrhTeOddDRuwf_ELEZpY4RyuiVWnRUfnDKI3jGDwrrFOjvs7lku5O8E1ElXv1eVDblhxnyCRdcqLbCbeK2_GbZXfdJC3ld_1KLasNTPqEe7RAgxNPT3eNhmEF1CLwStSiXlc2luXxeBw",
+          "alt": "Mark Smith"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBX68h8V_wD_lK_aHVBKQZLVXAx9YXw_Eh7oz1Yjdk6MCpioEPsMWRgBrn8S1KEt1xVf3P71P0U3e4VjXgm9WI7lqlAIC8wyGPaLxH0D4umoZ6Un7VEWu7-1t_eWRU6pb2My0x8ymNFNaFJoSjHa3",
+          "alt": "Current User"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCQVGdBHSCootb1W4L4hbR_IKIWVDpF6l1i1sJxnIJOhRLcniLZUqDlONwyzrigGMOdSTWWYY2NW_g7wwAgoXQ-Ig-btdcvYss67X2awuVOQDP8bJapwzTEF9stt09vCr17VlG7QXsAHP9h-T5lxu",
+          "alt": "Jane Doe"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "tertiary": "#943700",
+        "secondary-fixed-dim": "#b9c7df",
+        "on-primary": "#ffffff",
+        "on-surface": "#191c1e",
+        "on-surface-variant": "#434655",
+        "surface-dim": "#d8dadc",
+        "surface-container-low": "#f2f4f6",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "surface": "#f7f9fb",
+        "on-background": "#191c1e",
+        "surface-tint": "#0053db",
+        "surface-bright": "#f7f9fb",
+        "secondary-container": "#d5e3fc",
+        "outline": "#737686",
+        "on-primary-container": "#eeefff",
+        "secondary-fixed": "#d5e3fc",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary-container": "#bc4800",
+        "on-tertiary": "#ffffff",
+        "primary": "#004ac6",
+        "outline-variant": "#c3c6d7",
+        "inverse-surface": "#2d3133",
+        "error-container": "#ffdad6",
+        "background": "#f7f9fb",
+        "primary-fixed": "#dbe1ff",
+        "surface-variant": "#e0e3e5",
+        "on-tertiary-container": "#ffede6",
+        "tertiary-fixed": "#ffdbcd",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container": "#eceef0",
+        "inverse-on-surface": "#eff1f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#515f74",
+        "on-secondary-container": "#57657a",
+        "on-primary-fixed": "#00174b",
+        "primary-container": "#2563eb",
+        "tertiary-fixed-dim": "#ffb596",
+        "primary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "surface-container-high": "#e6e8ea",
+        "surface-container-highest": "#e0e3e5",
+        "on-secondary-fixed-variant": "#3a485b",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed": "#360f00",
+        "on-error": "#ffffff"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "icon": "confirmation_number",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Management",
+          "icon": "queue",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "icon": "group",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "Settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Help",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "view_kanban",
+          "icon": "view_kanban",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "list",
+          "icon": "list",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "more_horiz",
+          "icon": "more_horiz",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Ticket Loom Service Desk",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search ID, Subject...",
+          "type": "text",
+          "placeholder": "Search ID, Subject...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "select",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "Ticket Loom Service Desk",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Ticket Operations",
+          "icon": "confirmation_number",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Agent Workload",
+          "icon": "group",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "active": true
+        }
+      ],
+      "title": "Queue and Status Management - Product"
+    },
+    "ebf64eb17f9d4601a7f272dc02f389fa": {
+      "screenId": "ebf64eb17f9d4601a7f272dc02f389fa",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "h-full",
+            "py-md",
+            "px-sm",
+            "fixed",
+            "left-0",
+            "top-0",
+            "z-40"
+          ],
+          "childCount": 5
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "md:ml-sidebar_width",
+            "flex",
+            "flex-col",
+            "min-h-screen"
+          ],
+          "childCount": 17
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "w-8",
+            "h-8",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface-variant",
+            "hover:bg-surface-container",
+            "transition-colors",
+            "rounded"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help",
+          "classes": [
+            "w-8",
+            "h-8",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface-variant",
+            "hover:bg-surface-container",
+            "transition-colors",
+            "rounded"
+          ],
+          "icon": "help",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/help",
+          "expectedRoute": "/help",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "w-8",
+            "h-8",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface-variant",
+            "hover:bg-surface-container",
+            "transition-colors",
+            "rounded"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Filters",
+          "classes": [
+            "h-control_height",
+            "px-md",
+            "flex",
+            "items-center",
+            "gap-sm",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "hover:bg-surface-container",
+            "transition-colors",
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "Clear Filters",
+          "classes": [
+            "h-control_height",
+            "px-lg",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "transition-colors",
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": null,
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "classes": [
+            "h-control_height",
+            "px-lg",
+            "bg-primary",
+            "text-on-primary",
+            "rounded",
+            "hover:bg-primary-container",
+            "transition-colors",
+            "text-label-md",
+            "font-label-md",
+            "flex",
+            "items-center",
+            "gap-xs"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Contact Support",
+          "classes": [
+            "h-control_height",
+            "px-lg",
+            "bg-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "text-on-surface",
+            "hover:bg-surface-container",
+            "transition-colors",
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Retry",
+          "classes": [
+            "h-control_height",
+            "px-lg",
+            "bg-primary",
+            "text-on-primary",
+            "rounded",
+            "hover:bg-primary-container",
+            "transition-colors",
+            "text-label-md",
+            "font-label-md",
+            "flex",
+            "items-center",
+            "gap-xs"
+          ],
+          "icon": "refresh",
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "button",
+          "label": "support_agent",
+          "classes": [],
+          "icon": "support_agent",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "TicketLoom Service Desk",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search tickets...",
+          "placeholder": "Search tickets...",
+          "name": "",
+          "classes": [
+            "h-8",
+            "pl-8",
+            "pr-3",
+            "bg-surface-container-low",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "text-body-sm",
+            "focus:border-primary",
+            "focus:ring-1",
+            "focus:ring-primary",
+            "w-64",
+            "outline-none"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "dashboard",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Queues",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "queue",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Workload",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "group_work",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Support",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "contact_support",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Archive",
+          "href": "#",
+          "classes": [
+            "text-label-md",
+            "font-label-md"
+          ],
+          "icon": "inventory_2",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "support_agent",
+        "dashboard",
+        "queue",
+        "group_work",
+        "analytics",
+        "contact_support",
+        "search",
+        "notifications",
+        "help",
+        "settings",
+        "filter_list",
+        "inbox",
+        "add",
+        "cloud_off",
+        "refresh"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDM5nH50fq41wlP6ZOUfTBPIGndlJKb36BrT8fS1BmKAfO47Q70VUY2rMi5BhGWImIGdQjHhktKWZmMq1F6Iut6xGGjznTx5SIXxP0oUfnOwcNvrQWmJyR8WCQixAJxDUqSyapypSVvNvPY-gkeXu",
+          "alt": "Agent Avatar"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "tertiary": "#943700",
+        "secondary-fixed-dim": "#b9c7df",
+        "on-primary": "#ffffff",
+        "on-surface": "#191c1e",
+        "on-surface-variant": "#434655",
+        "surface-dim": "#d8dadc",
+        "surface-container-low": "#f2f4f6",
+        "on-tertiary-fixed-variant": "#7d2d00",
+        "surface": "#f7f9fb",
+        "on-background": "#191c1e",
+        "surface-tint": "#0053db",
+        "surface-bright": "#f7f9fb",
+        "secondary-container": "#d5e3fc",
+        "outline": "#737686",
+        "on-primary-container": "#eeefff",
+        "secondary-fixed": "#d5e3fc",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary-container": "#bc4800",
+        "on-tertiary": "#ffffff",
+        "primary": "#004ac6",
+        "outline-variant": "#c3c6d7",
+        "inverse-surface": "#2d3133",
+        "error-container": "#ffdad6",
+        "background": "#f7f9fb",
+        "primary-fixed": "#dbe1ff",
+        "surface-variant": "#e0e3e5",
+        "on-tertiary-container": "#ffede6",
+        "tertiary-fixed": "#ffdbcd",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container": "#eceef0",
+        "inverse-on-surface": "#eff1f3",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#515f74",
+        "on-secondary-container": "#57657a",
+        "on-primary-fixed": "#00174b",
+        "primary-container": "#2563eb",
+        "tertiary-fixed-dim": "#ffb596",
+        "primary-fixed-dim": "#b4c5ff",
+        "on-error-container": "#93000a",
+        "surface-container-high": "#e6e8ea",
+        "surface-container-highest": "#e0e3e5",
+        "on-secondary-fixed-variant": "#3a485b",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed": "#360f00",
+        "on-error": "#ffffff"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "dashboard",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Queues",
+          "icon": "queue",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Workload",
+          "icon": "group_work",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Support",
+          "icon": "contact_support",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Archive",
+          "icon": "inventory_2",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help",
+          "icon": "help",
+          "action": "navigate",
+          "route": "/help",
+          "expectedBehavior": "navigate:/help"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Filters",
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "Clear Filters",
+          "icon": null,
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "Create Ticket",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Contact Support",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Retry",
+          "icon": "refresh",
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "button",
+          "label": "support_agent",
+          "icon": "support_agent",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "TicketLoom Service Desk",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search tickets...",
+          "type": "text",
+          "placeholder": "Search tickets...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "support_agent",
+          "icon": "support_agent",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "TicketLoom Service Desk",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "dashboard",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Queues",
+          "icon": "queue",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Workload",
+          "icon": "group_work",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "analytics",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Support",
+          "icon": "contact_support",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Archive",
+          "icon": "inventory_2",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Empty and Error Recovery - Product"
+    }
+  }
+}

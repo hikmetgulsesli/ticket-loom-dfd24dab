@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ticket Loom - Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "tertiary-fixed": "#ffdbcd",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary": "#ffffff",
+                        "outline": "#737686",
+                        "on-surface-variant": "#434655",
+                        "surface-bright": "#f7f9fb",
+                        "primary": "#004ac6",
+                        "secondary-fixed": "#d5e3fc",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-background": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#943700",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#ffede6",
+                        "tertiary-container": "#bc4800",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-fixed": "#00174b",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary-container": "#eeefff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#57657a",
+                        "surface-tint": "#0053db",
+                        "surface": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eceef0",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "primary-container": "#2563eb",
+                        "secondary-container": "#d5e3fc",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2d3133",
+                        "secondary": "#515f74",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "24px",
+                        "lg": "16px",
+                        "sm": "8px",
+                        "gutter": "16px",
+                        "sidebar_width": "240px",
+                        "xs": "4px",
+                        "control_height": "32px",
+                        "md": "12px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "code": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "code": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-lg": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "headline-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for data tables if needed */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c3c6d7;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #737686;
+        }
+    </style>
+</head>
+<body class="h-full flex antialiased bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Hidden on Mobile, Visible on md+) -->
+<nav class="hidden md:flex flex-col bg-surface-container-low border-r border-outline-variant w-sidebar_width h-screen sticky top-0 left-0 py-xl px-sm gap-md z-40">
+<!-- Header / Logo -->
+<div class="px-sm mb-lg flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary text-[20px]" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-primary tracking-tight">Ticket Loom</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Service Desk</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-150 ease-in-out cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:text-on-surface" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-body-md text-body-md group-hover:text-on-surface">Ticket Operations</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-150 ease-in-out cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:text-on-surface" data-icon="queue">queue</span>
+<span class="font-body-md text-body-md group-hover:text-on-surface">Queue Management</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-highest transition-colors duration-150 ease-in-out cursor-pointer active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:text-on-surface" data-icon="group">group</span>
+<span class="font-body-md text-body-md group-hover:text-on-surface">Agent Workload</span>
+</a>
+<!-- Active Tab: Insights -->
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-primary bg-secondary-container font-medium transition-colors duration-150 ease-in-out cursor-pointer active:scale-95 relative before:absolute before:left-0 before:top-1 before:bottom-1 before:w-1 before:bg-primary before:rounded-r-sm" href="#">
+<span class="material-symbols-outlined text-[18px] fill" data-icon="analytics" data-weight="fill">analytics</span>
+<span class="font-body-md text-body-md">Insights</span>
+</a>
+</div>
+<!-- CTA -->
+<div class="mt-auto pt-md border-t border-outline-variant">
+<button class="w-full h-control_height bg-primary text-on-primary font-label-md text-label-md rounded-DEFAULT flex items-center justify-center gap-xs hover:bg-surface-tint transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+                Create Ticket
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopAppBar (Visible on all screens, adapts for mobile) -->
+<header class="bg-surface h-control_height w-full sticky top-0 z-30 border-b border-outline-variant flex justify-between items-center px-gutter w-full max-w-full">
+<!-- Mobile Brand (Hidden on md+) -->
+<div class="flex items-center gap-sm md:hidden">
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-DEFAULT transition-all duration-200">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md text-on-surface">Ticket Loom</div>
+</div>
+<!-- Page Title (Desktop) / Search placeholder -->
+<div class="hidden md:flex items-center">
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Operational Insights</h1>
+</div>
+<!-- Global Actions -->
+<div class="flex items-center gap-sm">
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-DEFAULT transition-all duration-200" title="Export Summary">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+</button>
+<div class="w-[1px] h-4 bg-outline-variant mx-xs"></div>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-DEFAULT transition-all duration-200">
+<span class="material-symbols-outlined text-[18px]" data-icon="notifications">notifications</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-DEFAULT transition-all duration-200">
+<span class="material-symbols-outlined text-[18px]" data-icon="settings">settings</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-DEFAULT transition-all duration-200 mr-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="help_outline">help_outline</span>
+</button>
+<img alt="Agent Profile" class="w-6 h-6 rounded-full border border-outline-variant object-cover" data-alt="A small, circular profile picture of a professional customer support agent, smiling subtly. The lighting is clean and modern, suitable for a corporate avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9HcCVJ4jzk2rXXWvDwC0EGElHT8SN1TijyQgywZ6EH_NUGUQGqXaaC327-PONmW09iu6Nm930Xy9z2N_UvjYyeDlwPIIrFQ3kvI7t3IkEQ8vxrPUuTmLbUnYVZ8MW8obDbwnqCUtY4dmfVCqsdpaPicDJWM_jg6yz7vW3iqxFV02Ui22x8H6un9Wc7RD4zA1_wxcxTGinYZ45GRfoxmomB4H5N9TVYs06pFKViPi5q3YzCWTehrVJzG31mUDdyKmt1Si2fLP0dWw"/>
+<!-- Mobile CTA (Hidden on md+) -->
+<button class="md:hidden ml-xs p-xs text-primary hover:bg-surface-container-low rounded-DEFAULT transition-all duration-200">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</header>
+<!-- Insights Dashboard Content -->
+<div class="flex-1 overflow-auto p-gutter lg:p-xl flex flex-col gap-lg lg:gap-xl">
+<!-- Contextual Alert -->
+<div class="bg-error-container text-on-error-container border border-error/20 rounded-lg p-md flex items-start gap-sm shadow-sm">
+<span class="material-symbols-outlined text-error mt-0.5" data-icon="warning">warning</span>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md font-semibold mb-0.5">Action Required: Nearing SLA Breach</h3>
+<p class="font-body-sm text-body-sm opacity-90">3 high-priority tickets are within 30 minutes of missing their initial response SLA.</p>
+</div>
+<button class="h-control_height px-sm bg-error text-on-error font-label-sm text-label-sm rounded-DEFAULT hover:bg-error/90 transition-colors">
+                    View Tickets
+                </button>
+</div>
+<!-- Key Metrics Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-sm opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[48px] text-primary" data-icon="speed">speed</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-xs flex items-center gap-xs">
+                        SLA Compliance
+                        <span class="material-symbols-outlined text-[14px]" data-icon="info">info</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-xs">94.2%</div>
+<div class="font-body-sm text-body-sm text-tertiary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_down">trending_down</span>
+                        -1.5% vs last week
+                    </div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-sm opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[48px] text-primary" data-icon="schedule">schedule</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-xs flex items-center gap-xs">
+                        Avg Resolution Time
+                    </div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-xs">4h 12m</div>
+<div class="font-body-sm text-body-sm text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_down">trending_down</span>
+                        -45m vs last week
+                    </div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-sm opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[48px] text-primary" data-icon="forum">forum</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-xs flex items-center gap-xs">
+                        Open Volume
+                    </div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-xs">1,204</div>
+<div class="font-body-sm text-body-sm text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_flat">trending_flat</span>
+                        Stable trend
+                    </div>
+</div>
+</div>
+<!-- Main Data Area (2 columns on lg) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg lg:gap-xl flex-1">
+<!-- Left Col (Charts & Visuals) -->
+<div class="lg:col-span-2 flex flex-col gap-lg">
+<!-- Volume Trends Chart (Placeholder) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col h-[300px]">
+<div class="p-md border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ticket Volume Trends</h3>
+<select class="h-6 text-[11px] font-label-sm bg-surface-container-low border-outline-variant rounded px-xs py-0 focus:ring-primary focus:border-primary">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<div class="flex-1 p-md relative flex items-end justify-between gap-xs">
+<!-- Faux Bar Chart -->
+<div class="w-full flex items-end justify-around h-full pt-lg pb-xs border-b border-l border-outline-variant relative">
+<!-- Grid lines -->
+<div class="absolute top-0 left-0 right-0 border-t border-outline-variant/30 border-dashed"></div>
+<div class="absolute top-1/3 left-0 right-0 border-t border-outline-variant/30 border-dashed"></div>
+<div class="absolute top-2/3 left-0 right-0 border-t border-outline-variant/30 border-dashed"></div>
+<div class="w-8 md:w-12 bg-primary-container/30 hover:bg-primary-container/50 transition-colors h-[40%] rounded-t-sm relative group cursor-crosshair z-10">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-code text-code px-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">142</div>
+</div>
+<div class="w-8 md:w-12 bg-primary-container/40 hover:bg-primary-container/60 transition-colors h-[65%] rounded-t-sm relative group cursor-crosshair z-10">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-code text-code px-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">210</div>
+</div>
+<div class="w-8 md:w-12 bg-primary-container/30 hover:bg-primary-container/50 transition-colors h-[30%] rounded-t-sm relative group cursor-crosshair z-10">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-code text-code px-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">110</div>
+</div>
+<div class="w-8 md:w-12 bg-primary-container/60 hover:bg-primary-container/80 transition-colors h-[85%] rounded-t-sm relative group cursor-crosshair z-10">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-code text-code px-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">295</div>
+</div>
+<div class="w-8 md:w-12 bg-primary-container/50 hover:bg-primary-container/70 transition-colors h-[70%] rounded-t-sm relative group cursor-crosshair z-10">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-code text-code px-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">230</div>
+</div>
+<div class="w-8 md:w-12 bg-primary hover:bg-primary/90 transition-colors h-[95%] rounded-t-sm relative group cursor-crosshair z-10">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-code text-code px-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">340</div>
+</div>
+<div class="w-8 md:w-12 bg-primary-container/40 hover:bg-primary-container/60 transition-colors h-[50%] rounded-t-sm relative group cursor-crosshair z-10">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-code text-code px-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">180</div>
+</div>
+</div>
+</div>
+<div class="px-md pb-xs flex justify-around font-label-sm text-label-sm text-on-surface-variant">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- Distribution -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col">
+<div class="p-md border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Current Distribution</h3>
+</div>
+<div class="p-md flex flex-col sm:flex-row gap-lg items-center">
+<!-- Faux Donut Chart -->
+<div class="relative w-32 h-32 shrink-0 rounded-full border-[16px] border-surface-container-low" style="background: conic-gradient(theme('colors.primary') 0% 45%, theme('colors.secondary-container') 45% 75%, theme('colors.error-container') 75% 90%, theme('colors.tertiary-container') 90% 100%);">
+<div class="absolute inset-0 m-auto w-24 h-24 bg-surface-container-lowest rounded-full flex items-center justify-center flex-col">
+<span class="font-headline-sm text-headline-sm">1.2k</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">Total</span>
+</div>
+</div>
+<!-- Legend / Stats -->
+<div class="flex-1 w-full grid grid-cols-2 gap-y-sm gap-x-md">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-primary shrink-0"></div>
+<span class="font-body-sm text-body-sm flex-1">In Progress</span>
+<span class="font-code text-code text-on-surface-variant">45%</span>
+</div>
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-secondary-container shrink-0"></div>
+<span class="font-body-sm text-body-sm flex-1">New</span>
+<span class="font-code text-code text-on-surface-variant">30%</span>
+</div>
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-error-container shrink-0"></div>
+<span class="font-body-sm text-body-sm flex-1">Escalated</span>
+<span class="font-code text-code text-on-surface-variant">15%</span>
+</div>
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-tertiary-container shrink-0"></div>
+<span class="font-body-sm text-body-sm flex-1">On Hold</span>
+<span class="font-code text-code text-on-surface-variant">10%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Col (Activity & Lists) -->
+<div class="flex flex-col gap-lg h-full">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col h-full min-h-[400px]">
+<div class="p-md border-b border-outline-variant flex justify-between items-center sticky top-0 bg-surface-container-lowest z-10 rounded-t-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Activity</h3>
+<button class="text-primary font-label-sm text-label-sm hover:underline">View All</button>
+</div>
+<div class="flex-1 overflow-auto p-xs">
+<!-- Activity Item -->
+<div class="flex items-start gap-sm p-sm hover:bg-surface-container-low rounded-DEFAULT transition-colors">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="done_all">done_all</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm leading-tight text-on-surface"><span class="font-semibold">Jane Doe</span> resolved ticket <a class="text-primary hover:underline font-code" href="#">#TK-8492</a></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">2 mins ago</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex items-start gap-sm p-sm hover:bg-surface-container-low rounded-DEFAULT transition-colors">
+<div class="w-6 h-6 rounded-full bg-error-container text-on-error-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="priority_high">priority_high</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm leading-tight text-on-surface">SLA Warning: <a class="text-primary hover:underline font-code" href="#">#TK-8501</a> breached response target.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">14 mins ago</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex items-start gap-sm p-sm hover:bg-surface-container-low rounded-DEFAULT transition-colors">
+<div class="w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="assignment_turned_in">assignment_turned_in</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm leading-tight text-on-surface">System assigned 12 tickets to <span class="font-semibold">Billing Queue</span>.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">1 hour ago</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex items-start gap-sm p-sm hover:bg-surface-container-low rounded-DEFAULT transition-colors">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="person_add">person_add</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm leading-tight text-on-surface"><span class="font-semibold">Mark Smith</span> joined the support shift.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">2 hours ago</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex items-start gap-sm p-sm hover:bg-surface-container-low rounded-DEFAULT transition-colors">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="chat">chat</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm leading-tight text-on-surface">New comment on <a class="text-primary hover:underline font-code" href="#">#TK-8330</a> from customer.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">3 hours ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

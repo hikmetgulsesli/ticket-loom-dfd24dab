@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TicketLoom - Settings &amp; Preferences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#943700",
+                      "secondary-fixed-dim": "#b9c7df",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "on-surface-variant": "#434655",
+                      "surface-dim": "#d8dadc",
+                      "surface-container-low": "#f2f4f6",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "surface": "#f7f9fb",
+                      "on-background": "#191c1e",
+                      "surface-tint": "#0053db",
+                      "surface-bright": "#f7f9fb",
+                      "secondary-container": "#d5e3fc",
+                      "outline": "#737686",
+                      "on-primary-container": "#eeefff",
+                      "secondary-fixed": "#d5e3fc",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "tertiary-container": "#bc4800",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#004ac6",
+                      "outline-variant": "#c3c6d7",
+                      "inverse-surface": "#2d3133",
+                      "error-container": "#ffdad6",
+                      "background": "#f7f9fb",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-variant": "#e0e3e5",
+                      "on-tertiary-container": "#ffede6",
+                      "tertiary-fixed": "#ffdbcd",
+                      "on-secondary": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "surface-container": "#eceef0",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-secondary-fixed": "#0d1c2e",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#515f74",
+                      "on-secondary-container": "#57657a",
+                      "on-primary-fixed": "#00174b",
+                      "primary-container": "#2563eb",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#e6e8ea",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-secondary-fixed-variant": "#3a485b",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "xl": "24px",
+                      "sm": "8px",
+                      "control_height": "32px",
+                      "lg": "16px",
+                      "base": "4px",
+                      "xs": "4px",
+                      "sidebar_width": "240px",
+                      "gutter": "16px",
+                      "md": "12px"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "code": [
+                              "jetbrainsMono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "code": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "letterSpacing": "0.03em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for high density look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e0e3e5;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c3c6d7;
+        }
+        /* Toggle Switch Styling */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #004ac6;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #004ac6;
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: white;
+        }
+        .toggle-label {
+            width: 36px;
+            height: 20px;
+            background-color: #c3c6d7;
+            border-radius: 9999px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .toggle-label:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-full overflow-hidden flex font-body-md text-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface flex justify-between items-center h-control_height px-lg w-full z-50 fixed top-0 border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-md">
+<!-- Mobile Menu Toggle (hidden on desktop) -->
+<button class="md:hidden text-primary dark:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-highest p-sm rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">TicketLoom</span>
+</div>
+<div class="flex items-center">
+<div class="flex items-center gap-xs">
+<button aria-label="notifications" class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors h-control_height w-control_height flex items-center justify-center rounded-DEFAULT">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+</button>
+<button aria-label="help" class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors h-control_height w-control_height flex items-center justify-center rounded-DEFAULT">
+<span class="material-symbols-outlined text-[18px]">help</span>
+</button>
+<button aria-label="settings" class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors h-control_height w-control_height flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">settings</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant mx-sm"></div>
+<img alt="Agent Avatar" class="w-[24px] h-[24px] rounded-full object-cover border border-outline-variant" data-alt="A small, professional headshot of a customer support agent. The agent is smiling slightly against a neutral gray background. The lighting is soft and even, typical of a corporate directory photo. The overall feel is approachable yet formal, fitting a business software interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2o4EpQWKeBNaf5XmwhibkBN9gXgXnwkqTmyfUawTdqptos9-j84faEI8h5422I8Lj1-vgjTulGT_K3YB-O3BMaaXbxEQAf5A2WfueDCzvQENhx-TKWK8AxkJBaEbK3FLnyWvaBU4bKk47C0x1PeNVypiDUPTmsK3x-6bU-YTQvFJP1M6suosHvNMySAOWco5NJGzTe781PfS2YcuVSBtHPsVwSECL9by2k5IhLA1QzHfiGVou0R0wQ8nXqg-7ghZIMYVNFMDG7Gw"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-outline flex flex-col h-full py-md px-sm fixed left-0 top-[32px] z-40 w-sidebar_width hidden md:flex" style="height: calc(100vh - 32px);">
+<div class="flex flex-col gap-xs flex-grow mt-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex items-center gap-sm px-sm py-xs rounded-DEFAULT min-h-control_height" href="#">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span class="text-label-md font-label-md">Operations</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex items-center gap-sm px-sm py-xs rounded-DEFAULT min-h-control_height" href="#">
+<span class="material-symbols-outlined text-[18px]">queue</span>
+<span class="text-label-md font-label-md">Queues</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex items-center gap-sm px-sm py-xs rounded-DEFAULT min-h-control_height" href="#">
+<span class="material-symbols-outlined text-[18px]">group_work</span>
+<span class="text-label-md font-label-md">Workload</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex items-center gap-sm px-sm py-xs rounded-DEFAULT min-h-control_height" href="#">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+<span class="text-label-md font-label-md">Insights</span>
+</a>
+</div>
+<div class="flex flex-col gap-xs mt-auto pt-sm border-t border-outline-variant dark:border-outline">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex items-center gap-sm px-sm py-xs rounded-DEFAULT min-h-control_height" href="#">
+<span class="material-symbols-outlined text-[18px]">contact_support</span>
+<span class="text-label-md font-label-md">Support</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors flex items-center gap-sm px-sm py-xs rounded-DEFAULT min-h-control_height" href="#">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="text-label-md font-label-md">Archive</span>
+</a>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-1 ml-0 md:ml-sidebar_width mt-[32px] p-lg overflow-y-auto" style="height: calc(100vh - 32px);">
+<div class="max-w-5xl mx-auto space-y-xl pb-xl">
+<!-- Header Section -->
+<div class="flex justify-between items-end border-b border-outline-variant pb-md">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-xs">Settings &amp; Preferences</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Manage your workspace configuration and notification behaviors.</p>
+</div>
+<div class="flex gap-sm">
+<button class="h-control_height px-md border border-outline text-on-surface-variant bg-surface hover:bg-surface-container rounded-DEFAULT text-label-md font-label-md transition-colors flex items-center justify-center gap-xs">
+                        Reset to Defaults
+                    </button>
+<button class="h-control_height px-md bg-primary text-on-primary hover:opacity-90 rounded-DEFAULT text-label-md font-label-md transition-colors flex items-center justify-center gap-xs" id="savePreferencesBtn">
+                        Save Changes
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column (Nav/TOC equivalent) -->
+<div class="lg:col-span-3 hidden lg:block">
+<ul class="space-y-xs sticky top-xl">
+<li>
+<a class="block px-sm py-xs text-label-md font-label-md text-primary bg-primary-fixed rounded-DEFAULT" href="#views">Views &amp; Display</a>
+</li>
+<li>
+<a class="block px-sm py-xs text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low rounded-DEFAULT transition-colors" href="#filters">Saved Filters</a>
+</li>
+<li>
+<a class="block px-sm py-xs text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low rounded-DEFAULT transition-colors" href="#notifications">Notifications</a>
+</li>
+</ul>
+</div>
+<!-- Right Column (Settings Content) -->
+<div class="lg:col-span-9 space-y-lg">
+<!-- Views & Display Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg" id="views">
+<div class="flex items-center gap-sm mb-md pb-xs border-b border-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-primary">visibility</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Views &amp; Display</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-sm">
+<label class="block text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Default Landing View</label>
+<select class="w-full h-control_height px-sm py-0 border border-outline-variant rounded-DEFAULT bg-surface text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option value="operations">Operations Overview</option>
+<option selected="" value="my_assigned">My Assigned Tickets</option>
+<option value="unassigned">Unassigned Queue</option>
+<option value="critical">Critical SLAs</option>
+</select>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-xs">This view loads automatically when you open TicketLoom.</p>
+</div>
+<div class="space-y-sm">
+<label class="block text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Display Density</label>
+<div class="flex border border-outline-variant rounded-DEFAULT overflow-hidden h-control_height">
+<button class="flex-1 bg-primary text-on-primary text-label-md font-label-md flex items-center justify-center border-r border-outline-variant last:border-r-0">
+                                        Compact
+                                    </button>
+<button class="flex-1 bg-surface text-on-surface hover:bg-surface-container text-label-md font-label-md flex items-center justify-center transition-colors">
+                                        Comfortable
+                                    </button>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-xs">Compact maximizes rows; Comfortable increases padding.</p>
+</div>
+</div>
+</section>
+<!-- Saved Filters Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg" id="filters">
+<div class="flex items-center justify-between mb-md pb-xs border-b border-surface-variant">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">filter_list</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Saved Filters</h2>
+</div>
+<button class="text-primary hover:text-primary-container text-label-md font-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">add</span> New Filter
+                            </button>
+</div>
+<div class="border border-outline-variant rounded-DEFAULT overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="py-xs px-sm text-label-sm font-label-sm text-on-surface-variant font-medium w-1/2">Filter Name</th>
+<th class="py-xs px-sm text-label-sm font-label-sm text-on-surface-variant font-medium">Default</th>
+<th class="py-xs px-sm text-label-sm font-label-sm text-on-surface-variant font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant bg-surface-container-lowest">
+<tr class="hover:bg-surface transition-colors h-[40px]">
+<td class="py-xs px-sm text-body-md font-body-md text-on-surface font-medium">High Priority Network Issues</td>
+<td class="py-xs px-sm">
+<input checked="" class="w-4 h-4 text-primary bg-surface border-outline focus:ring-primary focus:ring-1" name="default_filter" type="radio"/>
+</td>
+<td class="py-xs px-sm text-right">
+<button aria-label="Edit" class="text-on-surface-variant hover:text-primary transition-colors p-xs">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors h-[40px]">
+<td class="py-xs px-sm text-body-md font-body-md text-on-surface font-medium">VIP Customer Escalatons</td>
+<td class="py-xs px-sm">
+<input class="w-4 h-4 text-primary bg-surface border-outline focus:ring-primary focus:ring-1" name="default_filter" type="radio"/>
+</td>
+<td class="py-xs px-sm text-right">
+<button aria-label="Edit" class="text-on-surface-variant hover:text-primary transition-colors p-xs">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors h-[40px]">
+<td class="py-xs px-sm text-body-md font-body-md text-on-surface font-medium">Pending 3rd Party</td>
+<td class="py-xs px-sm">
+<input class="w-4 h-4 text-primary bg-surface border-outline focus:ring-primary focus:ring-1" name="default_filter" type="radio"/>
+</td>
+<td class="py-xs px-sm text-right">
+<button aria-label="Edit" class="text-on-surface-variant hover:text-primary transition-colors p-xs">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Notifications Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg" id="notifications">
+<div class="flex items-center gap-sm mb-md pb-xs border-b border-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-primary">notifications_active</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Notification Preferences</h2>
+</div>
+<div class="space-y-0 divide-y divide-surface-variant border border-outline-variant rounded-DEFAULT">
+<!-- SLA Breaches -->
+<div class="p-sm flex items-center justify-between bg-surface-container-lowest hover:bg-surface transition-colors">
+<div>
+<div class="text-body-md font-body-md text-on-surface font-medium">SLA Breaches &amp; Warnings</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Alerts when a ticket approaches or misses target resolution time.</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex flex-col items-center gap-xs">
+<span class="text-label-sm font-label-sm text-on-surface-variant">In-App</span>
+<div class="relative inline-block w-9 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="sla_inapp" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-outline-variant cursor-pointer" for="sla_inapp"></label>
+</div>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Email</span>
+<div class="relative inline-block w-9 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="sla_email" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-outline-variant cursor-pointer" for="sla_email"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- New Assignments -->
+<div class="p-sm flex items-center justify-between bg-surface-container-lowest hover:bg-surface transition-colors">
+<div>
+<div class="text-body-md font-body-md text-on-surface font-medium">New Assignments</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">When a ticket is routed to your personal queue.</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex flex-col items-center gap-xs">
+<span class="text-label-sm font-label-sm text-on-surface-variant opacity-0">In-App</span>
+<div class="relative inline-block w-9 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="assign_inapp" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-outline-variant cursor-pointer" for="assign_inapp"></label>
+</div>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="text-label-sm font-label-sm text-on-surface-variant opacity-0">Email</span>
+<div class="relative inline-block w-9 align-middle select-none">
+<input class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="assign_email" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-outline-variant cursor-pointer" for="assign_email"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- Mentions -->
+<div class="p-sm flex items-center justify-between bg-surface-container-lowest hover:bg-surface transition-colors">
+<div>
+<div class="text-body-md font-body-md text-on-surface font-medium">Mentions (@User)</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">When a colleague mentions you in an internal note.</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex flex-col items-center gap-xs">
+<span class="text-label-sm font-label-sm text-on-surface-variant opacity-0">In-App</span>
+<div class="relative inline-block w-9 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="mention_inapp" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-outline-variant cursor-pointer" for="mention_inapp"></label>
+</div>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="text-label-sm font-label-sm text-on-surface-variant opacity-0">Email</span>
+<div class="relative inline-block w-9 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="mention_email" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-outline-variant cursor-pointer" for="mention_email"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Error State / Retry Action (Contextual) -->
+<div class="bg-error-container border border-error/20 rounded-lg p-sm flex items-center justify-between hidden" id="errorState">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-error">warning</span>
+<span class="text-body-md font-body-md text-on-error-container">Failed to sync latest integration settings.</span>
+</div>
+<button class="h-control_height px-md bg-surface text-on-surface border border-outline hover:bg-surface-container rounded-DEFAULT text-label-md font-label-md transition-colors flex items-center justify-center gap-xs">
+                            Retry Sync
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Toast Notification (Hidden by default) -->
+<div class="fixed bottom-xl right-xl bg-inverse-surface text-inverse-on-surface px-md py-sm rounded-DEFAULT shadow-md flex items-center gap-sm transform translate-y-20 opacity-0 transition-all duration-300 z-50" id="saveToast">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">check_circle</span>
+<span class="text-body-md font-body-md">Preferences saved successfully.</span>
+</div>
+<script>
+        // Simple JS for Toast interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const saveBtn = document.getElementById('savePreferencesBtn');
+            const toast = document.getElementById('saveToast');
+
+            if (saveBtn && toast) {
+                saveBtn.addEventListener('click', () => {
+                    // Simulate save action
+                    saveBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    saveBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span> Saving...';
+                    
+                    setTimeout(() => {
+                        // Reset button
+                        saveBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                        saveBtn.innerHTML = 'Save Changes';
+                        
+                        // Show toast
+                        toast.classList.remove('translate-y-20', 'opacity-0');
+                        
+                        // Hide toast after 3s
+                        setTimeout(() => {
+                            toast.classList.add('translate-y-20', 'opacity-0');
+                        }, 3000);
+                    }, 800);
+                });
+            }
+        });
+    </script>
+</body></html>

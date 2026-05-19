@@ -1,0 +1,65 @@
+[
+  {
+    "screenId": "ce82acd69fc243b6a759c2280dcdd35f",
+    "name": "Agent Workload - Product",
+    "type": "app-screen",
+    "description": "Agent Workload - Product screen",
+    "surfaceIds": [
+      "SURF_AGENT_WORKLOAD"
+    ]
+  },
+  {
+    "screenId": "d53c29fbae8e4bc984264462f48963de",
+    "name": "Ticket Editor - Product",
+    "type": "form",
+    "description": "Ticket Editor - Product screen",
+    "surfaceIds": [
+      "SURF_TICKET_EDITOR"
+    ]
+  },
+  {
+    "screenId": "e6360c5f77b74538b3932e74843e37fc",
+    "name": "Queue and Status Management - Product",
+    "type": "app-screen",
+    "description": "Queue and Status Management - Product screen",
+    "surfaceIds": [
+      "SURF_QUEUE_AND_STATUS_MANAGEMENT"
+    ]
+  },
+  {
+    "screenId": "90bee95be4264cc98e1616f14fc32268",
+    "name": "Insights - Product",
+    "type": "app-screen",
+    "description": "Insights - Product screen",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "89d51e20e881422ba5150d6fbafdf977",
+    "name": "Ticket Operations - Product",
+    "type": "app-screen",
+    "description": "Ticket Operations - Product screen",
+    "surfaceIds": [
+      "SURF_TICKET_OPERATIONS"
+    ]
+  },
+  {
+    "screenId": "ebf64eb17f9d4601a7f272dc02f389fa",
+    "name": "Empty and Error Recovery - Product",
+    "type": "error",
+    "description": "Empty and Error Recovery - Product screen",
+    "surfaceIds": [
+      "SURF_EMPTY_AND_ERROR_RECOVERY"
+    ]
+  },
+  {
+    "screenId": "5ca3ddc70e5b4eeead9d32659b517e95",
+    "name": "Settings and Preferences - Product",
+    "type": "settings",
+    "description": "Settings and Preferences - Product screen",
+    "surfaceIds": [
+      "SURF_SETTINGS_AND_PREFERENCES"
+    ]
+  }
+]

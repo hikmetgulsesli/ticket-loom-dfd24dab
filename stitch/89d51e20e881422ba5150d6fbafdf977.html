@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ticket Loom - Ticket Operations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "tertiary-fixed": "#ffdbcd",
+                    "background": "#f7f9fb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-low": "#f2f4f6",
+                    "on-secondary": "#ffffff",
+                    "outline": "#737686",
+                    "on-surface-variant": "#434655",
+                    "surface-bright": "#f7f9fb",
+                    "primary": "#004ac6",
+                    "secondary-fixed": "#d5e3fc",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-background": "#191c1e",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "tertiary": "#943700",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-high": "#e6e8ea",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-container": "#ffede6",
+                    "tertiary-container": "#bc4800",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-fixed": "#00174b",
+                    "inverse-on-surface": "#eff1f3",
+                    "primary-fixed": "#dbe1ff",
+                    "on-primary-container": "#eeefff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#57657a",
+                    "surface-tint": "#0053db",
+                    "surface": "#f7f9fb",
+                    "on-surface": "#191c1e",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#eceef0",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "primary-container": "#2563eb",
+                    "secondary-container": "#d5e3fc",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2d3133",
+                    "secondary": "#515f74",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "24px",
+                    "lg": "16px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "sidebar_width": "240px",
+                    "xs": "4px",
+                    "control_height": "32px",
+                    "md": "12px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-sm": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "code": [
+                            "jetbrainsMono"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "code": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "11px",
+                            {
+                                    "lineHeight": "14px",
+                                    "letterSpacing": "0.03em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f7f9fb; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-xl px-sm gap-md w-sidebar_width h-screen sticky top-0 left-0 bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-outline z-40">
+<div class="mb-lg px-sm">
+<h1 class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tight">Ticket Loom</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">Service Desk</p>
+</div>
+<button class="h-control_height bg-primary text-on-primary font-label-md text-label-md rounded flex items-center justify-center gap-sm mb-lg hover:bg-primary-container transition-colors shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-[16px]">add</span>
+            Create Ticket
+        </button>
+<div class="flex flex-col gap-xs flex-grow overflow-y-auto scrollbar-hide">
+<a class="flex items-center gap-md px-sm py-[6px] rounded text-primary dark:text-primary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant font-medium transition-colors duration-150 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">confirmation_number</span>
+<span class="font-label-md text-label-md">Ticket Operations</span>
+</a>
+<a class="flex items-center gap-md px-sm py-[6px] rounded text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-highest dark:hover:bg-on-secondary-fixed transition-colors duration-150 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">queue</span>
+<span class="font-label-md text-label-md">Queue Management</span>
+</a>
+<a class="flex items-center gap-md px-sm py-[6px] rounded text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-highest dark:hover:bg-on-secondary-fixed transition-colors duration-150 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-label-md text-label-md">Agent Workload</span>
+</a>
+<a class="flex items-center gap-md px-sm py-[6px] rounded text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-highest dark:hover:bg-on-secondary-fixed transition-colors duration-150 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+<span class="font-label-md text-label-md">Insights</span>
+</a>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant dark:border-outline px-sm flex items-center gap-sm">
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfxxeTA0sTSgEEbGU90yON_HS9jVw-b4oR02n5ndUKd1W4o7FiJSu-h72puAcU9BsmvJDpjU_h4w_uAxXXfJRpgtVvTDlETbu2yPKd-VBB7tnoJVfoSBUUKgErWzrtvI5hK1zHsbJJzFNeBkvurx7iPqAu4JtCwS8hqwZ8CZCyJ0jCQfTSdlrQTM240LRn4MGwzyMmGIPM0N6wsdG8p4O5a7k4J3_HlPgsd56W6etvkPDAUFFst87El9xxLEiO5qyY0WngeP701N4"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Alex Mercer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">L2 Support</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Mobile TopAppBar (Visible only on mobile) -->
+<header class="md:hidden flex justify-between items-center px-gutter w-full max-w-full h-control_height sticky top-0 z-50 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<h1 class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface">Ticket Loom</h1>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-low p-[2px] rounded">search</span>
+<img alt="Agent Profile" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFKSGsSbJ6ZUKgb_9NM1fpq4IXJ0e9jUWWrCbmY6LyZLULh6ryUDb53CQip9MD3HsgtvRmcJFK94_qSlqOafMlSAEANn0ajVwgXX3P4SDdVqU55gNUFkClVWfyVTDVydlNgwtGEF2HS8QstyVydTU2QTFRuO3oIEzsBRjZbzzsNHACBYd-tsQ5F8xZgFjumfEldXTBjatIJogQ1dbYkwmx4PV_L-FkPPbQMPu0Drhri4-SfT8b59wO_wKTD4Avvfq3LcWZyoaSK6M"/>
+</div>
+</header>
+<!-- Top Content Header (Desktop) -->
+<div class="hidden md:flex items-center justify-between px-lg py-md border-b border-outline-variant bg-surface-container-lowest sticky top-0 z-30">
+<div class="flex items-center gap-lg flex-1">
+<h2 class="font-headline-md text-headline-md text-on-surface">Ticket Operations</h2>
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-[16px] text-outline">search</span>
+<input class="w-full h-control_height pl-8 pr-3 text-body-md font-body-md bg-surface border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" placeholder="Search tickets, IDs, or users..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="h-control_height px-sm flex items-center gap-xs text-on-surface-variant border border-outline-variant rounded hover:bg-surface-container-low transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+                     Filter
+                 </button>
+<button class="h-control_height w-control_height flex items-center justify-center text-on-surface-variant border border-outline-variant rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[16px]">view_column</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Content Workspace -->
+<div class="flex-1 overflow-auto p-lg flex flex-col md:flex-row gap-lg">
+<!-- Left Pane: Metrics & Table -->
+<div class="flex-1 flex flex-col gap-lg min-w-[60%]">
+<!-- Metrics Bento -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col justify-between h-[80px]">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Tickets</span>
+<div class="flex items-baseline gap-sm">
+<span class="font-headline-lg text-headline-lg text-on-surface">1,248</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col justify-between h-[80px]">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Open</span>
+<div class="flex items-baseline gap-sm">
+<span class="font-headline-lg text-headline-lg text-primary">342</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-error-container rounded p-md flex flex-col justify-between h-[80px] bg-error-container/10">
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider">Overdue</span>
+<div class="flex items-baseline gap-sm">
+<span class="font-headline-lg text-headline-lg text-error">28</span>
+<span class="material-symbols-outlined text-error text-[16px]">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col justify-between h-[80px]">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Unassigned</span>
+<div class="flex items-baseline gap-sm">
+<span class="font-headline-lg text-headline-lg text-tertiary">15</span>
+</div>
+</div>
+</div>
+<!-- Table Canvas -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded flex-1 flex flex-col overflow-hidden relative">
+<!-- Table Toolbar -->
+<div class="flex items-center justify-between p-sm border-b border-outline-variant bg-surface">
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-xs py-[2px] rounded">All Active</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-xs py-[2px]">Urgent Only</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">1-50 of 342</span>
+<button class="material-symbols-outlined text-[16px] text-on-surface-variant hover:text-on-surface">chevron_left</button>
+<button class="material-symbols-outlined text-[16px] text-on-surface-variant hover:text-on-surface">chevron_right</button>
+</div>
+</div>
+<!-- Table -->
+<div class="flex-1 overflow-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface sticky top-0 z-10 border-b border-outline-variant">
+<tr>
+<th class="p-xs pl-md font-label-sm text-label-sm text-on-surface-variant w-[80px]">ID</th>
+<th class="p-xs font-label-sm text-label-sm text-on-surface-variant">Subject</th>
+<th class="p-xs font-label-sm text-label-sm text-on-surface-variant w-[100px]">Status</th>
+<th class="p-xs font-label-sm text-label-sm text-on-surface-variant w-[80px]">Priority</th>
+<th class="p-xs font-label-sm text-label-sm text-on-surface-variant w-[120px]">Agent</th>
+<th class="p-xs pr-md font-label-sm text-label-sm text-on-surface-variant text-right w-[100px]">SLA</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface">
+<!-- Row 1 - Active/Selected State -->
+<tr class="border-b border-outline-variant bg-primary-container/5 hover:bg-surface-container-low cursor-pointer transition-colors relative">
+<td class="absolute left-0 top-0 bottom-0 w-[2px] bg-primary"></td>
+<td class="p-xs pl-md font-code text-code text-on-surface-variant">#TK-8092</td>
+<td class="p-xs font-medium truncate max-w-[200px]">Database Connection Timeout in Production</td>
+<td class="p-xs">
+<span class="bg-surface-container-highest text-on-surface-variant px-[6px] py-[2px] rounded font-label-sm text-label-sm">In Progress</span>
+</td>
+<td class="p-xs">
+<span class="bg-error-container text-on-error-container px-[6px] py-[2px] rounded font-label-sm text-label-sm flex items-center gap-[2px] w-fit"><span class="material-symbols-outlined text-[12px]">keyboard_double_arrow_up</span>P1</span>
+</td>
+<td class="p-xs truncate">Alex M.</td>
+<td class="p-xs pr-md text-right text-error font-medium">14m</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="p-xs pl-md font-code text-code text-on-surface-variant">#TK-8091</td>
+<td class="p-xs truncate max-w-[200px]">User cannot reset password via email link</td>
+<td class="p-xs">
+<span class="bg-secondary-container text-on-secondary-container px-[6px] py-[2px] rounded font-label-sm text-label-sm">Open</span>
+</td>
+<td class="p-xs">
+<span class="bg-surface-variant text-on-surface-variant px-[6px] py-[2px] rounded font-label-sm text-label-sm flex items-center gap-[2px] w-fit"><span class="material-symbols-outlined text-[12px]">keyboard_arrow_up</span>P2</span>
+</td>
+<td class="p-xs truncate text-on-surface-variant">Unassigned</td>
+<td class="p-xs pr-md text-right text-on-surface-variant">2h 15m</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="p-xs pl-md font-code text-code text-on-surface-variant">#TK-8088</td>
+<td class="p-xs truncate max-w-[200px]">Update billing address for enterprise account</td>
+<td class="p-xs">
+<span class="bg-surface-container text-on-surface-variant px-[6px] py-[2px] rounded font-label-sm text-label-sm">Pending Cust</span>
+</td>
+<td class="p-xs">
+<span class="bg-surface-variant text-on-surface-variant px-[6px] py-[2px] rounded font-label-sm text-label-sm flex items-center gap-[2px] w-fit"><span class="material-symbols-outlined text-[12px]">drag_handle</span>P3</span>
+</td>
+<td class="p-xs truncate">Sarah J.</td>
+<td class="p-xs pr-md text-right text-on-surface-variant">1d 4h</td>
+</tr>
+<!-- Row 4 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="p-xs pl-md font-code text-code text-on-surface-variant">#TK-8085</td>
+<td class="p-xs truncate max-w-[200px]">API Rate limit exceeded on /v2/users endpoint</td>
+<td class="p-xs">
+<span class="bg-surface-container-highest text-on-surface-variant px-[6px] py-[2px] rounded font-label-sm text-label-sm">In Progress</span>
+</td>
+<td class="p-xs">
+<span class="bg-tertiary-container text-on-tertiary-container px-[6px] py-[2px] rounded font-label-sm text-label-sm flex items-center gap-[2px] w-fit"><span class="material-symbols-outlined text-[12px]">keyboard_arrow_up</span>P2</span>
+</td>
+<td class="p-xs truncate">David L.</td>
+<td class="p-xs pr-md text-right text-tertiary font-medium">45m</td>
+</tr>
+<!-- Row 5 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="p-xs pl-md font-code text-code text-on-surface-variant">#TK-8080</td>
+<td class="p-xs truncate max-w-[200px]">Request for new dashboard widget type</td>
+<td class="p-xs">
+<span class="bg-secondary-container text-on-secondary-container px-[6px] py-[2px] rounded font-label-sm text-label-sm">Open</span>
+</td>
+<td class="p-xs">
+<span class="bg-surface-variant text-on-surface-variant px-[6px] py-[2px] rounded font-label-sm text-label-sm flex items-center gap-[2px] w-fit"><span class="material-symbols-outlined text-[12px]">keyboard_arrow_down</span>P4</span>
+</td>
+<td class="p-xs truncate text-on-surface-variant">Unassigned</td>
+<td class="p-xs pr-md text-right text-on-surface-variant">3d 12h</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Pane: Ticket Preview (Visible on Desktop, hidden on smaller screens unless toggled) -->
+<div class="hidden xl:flex flex-col w-[380px] bg-surface-container-lowest border border-outline-variant rounded overflow-hidden shadow-sm">
+<!-- Preview Header -->
+<div class="p-md border-b border-outline-variant bg-surface">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-code text-code text-on-surface-variant">#TK-8092</span>
+<div class="flex gap-xs">
+<button class="material-symbols-outlined text-[18px] text-on-surface-variant hover:text-on-surface">open_in_new</button>
+<button class="material-symbols-outlined text-[18px] text-on-surface-variant hover:text-on-surface">close</button>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Database Connection Timeout in Production</h3>
+<div class="flex gap-xs flex-wrap">
+<span class="bg-error-container text-on-error-container px-[6px] py-[2px] rounded font-label-sm text-label-sm">P1 - Critical</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-[6px] py-[2px] rounded font-label-sm text-label-sm">In Progress</span>
+<span class="bg-surface text-on-surface-variant border border-outline-variant px-[6px] py-[2px] rounded font-label-sm text-label-sm">Database</span>
+</div>
+</div>
+<!-- Preview Body (Scrollable) -->
+<div class="flex-1 overflow-auto p-md flex flex-col gap-md font-body-sm text-body-sm">
+<!-- Metadata Grid -->
+<div class="grid grid-cols-2 gap-y-sm gap-x-md p-sm bg-surface rounded border border-outline-variant">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-[2px]">Requester</span>
+<span class="block text-on-surface font-medium">systems@acmecorp.com</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-[2px]">Assignee</span>
+<span class="block text-on-surface font-medium">Alex Mercer</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-[2px]">Created</span>
+<span class="block text-on-surface">Oct 24, 09:12 AM</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-[2px]">SLA Breach</span>
+<span class="block text-error font-medium">in 14m</span>
+</div>
+</div>
+<div class="h-[1px] bg-outline-variant w-full my-xs"></div>
+<!-- Description -->
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-sm">Description</span>
+<p class="text-on-surface bg-surface p-sm rounded border border-outline-variant">
+                            Automated alert: App servers in us-east-1 are reporting high latency and connection timeouts to the primary PostgreSQL cluster. Error logs indicate max_connections reached. Attempting automatic failover did not resolve. Requires immediate DBA intervention.
+                        </p>
+</div>
+<!-- Activity Feed -->
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-sm">Recent Activity</span>
+<div class="flex flex-col gap-sm border-l-2 border-surface-container-highest ml-xs pl-sm relative">
+<div class="relative">
+<div class="absolute -left-[17px] top-1 w-[10px] h-[10px] bg-primary rounded-full border-2 border-surface-container-lowest"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10 mins ago</span>
+<p class="text-on-surface"><span class="font-medium">Alex Mercer</span> added an internal note:</p>
+<div class="bg-surface-container-low p-sm rounded mt-xs border border-outline-variant text-on-surface">
+                                     Investigating current connection pool settings. PgBouncer logs show a spike in idle transactions. Terminating stale sessions now.
+                                 </div>
+</div>
+<div class="relative">
+<div class="absolute -left-[17px] top-1 w-[10px] h-[10px] bg-surface-variant rounded-full border-2 border-surface-container-lowest"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">25 mins ago</span>
+<p class="text-on-surface"><span class="font-medium">System</span> changed status to <span class="bg-surface-container-highest px-xs py-[2px] rounded text-[10px]">In Progress</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Preview Actions -->
+<div class="p-sm border-t border-outline-variant bg-surface-container-lowest flex gap-sm">
+<button class="flex-1 h-control_height bg-primary text-on-primary font-label-md text-label-md rounded hover:bg-primary-container transition-colors">Reply</button>
+<button class="h-control_height px-sm text-on-surface-variant border border-outline-variant rounded hover:bg-surface-container-low transition-colors font-label-md text-label-md">Note</button>
+</div>
+</div>
+</div>
+<!-- Mobile Bottom Nav (Visible only on mobile) -->
+<nav class="md:hidden flex justify-around items-center h-[56px] border-t border-outline-variant bg-surface w-full sticky bottom-0 z-50">
+<div class="flex flex-col items-center justify-center w-full h-full text-primary">
+<span class="material-symbols-outlined text-[20px] mb-[2px]">confirmation_number</span>
+<span class="font-label-sm text-[10px] leading-none">Tickets</span>
+</div>
+<div class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] mb-[2px]">queue</span>
+<span class="font-label-sm text-[10px] leading-none">Queues</span>
+</div>
+<div class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] mb-[2px]">group</span>
+<span class="font-label-sm text-[10px] leading-none">Agents</span>
+</div>
+<div class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] mb-[2px]">analytics</span>
+<span class="font-label-sm text-[10px] leading-none">Insights</span>
+</div>
+</nav>
+</main>
+</body></html>
